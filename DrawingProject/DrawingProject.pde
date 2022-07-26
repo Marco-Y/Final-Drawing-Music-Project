@@ -36,25 +36,21 @@ void draw()
     selectPenButton();
     selectCircleButton();
   }
-  if (selectPenButtonON=true) {
-    if ( draw == true && mouseX>drawingSurfaceX && mouseX<drawingSurfaceX+drawingSurfaceWidth && mouseY>drawingSurfaceY && mouseY<drawingSurfaceY+drawingSurfaceHeight) {
-      line (mouseX, mouseY, pmouseX, pmouseY); //Pen drawing tool
-      fill(defaultGrey);
-      rect( selectingSurfaceX, selectingSurfaceY, selectingSurfaceWidth, selectingSurfaceHeight );
-      fill(resetWhite);
-      selectButton();
-      selectText();
-    }
+  if ( selectPenButtonON==true && draw == true && mouseX>drawingSurfaceX && mouseX<drawingSurfaceX+drawingSurfaceWidth && mouseY>drawingSurfaceY && mouseY<drawingSurfaceY+drawingSurfaceHeight) {
+    line (mouseX, mouseY, pmouseX, pmouseY); //Pen drawing tool
+    fill(defaultGrey);
+    rect( selectingSurfaceX, selectingSurfaceY, selectingSurfaceWidth, selectingSurfaceHeight );
+    fill(resetWhite);
+    selectButton();
+    selectText();
   }
-  if (selectCircleButtonON=true) {
-    if ( draw == true && mouseX>drawingSurfaceX && mouseX<drawingSurfaceX+drawingSurfaceWidth && mouseY>drawingSurfaceY && mouseY<drawingSurfaceY+drawingSurfaceHeight) {
-      ellipse( mouseX, mouseY, drawingDiameter, drawingDiameter); //Circle Drawing Tool
-      fill(defaultGrey);
-      rect( selectingSurfaceX, selectingSurfaceY, selectingSurfaceWidth, selectingSurfaceHeight );
-      fill(resetWhite);
-      selectButton();
-      selectText();
-    }
+  if ( selectCircleButtonON==true && draw == true && mouseX>drawingSurfaceX && mouseX<drawingSurfaceX+drawingSurfaceWidth && mouseY>drawingSurfaceY && mouseY<drawingSurfaceY+drawingSurfaceHeight) {
+    ellipse( mouseX, mouseY, drawingDiameter, drawingDiameter); //Circle Drawing Tool
+    fill(defaultGrey);
+    rect( selectingSurfaceX, selectingSurfaceY, selectingSurfaceWidth, selectingSurfaceHeight );
+    fill(resetWhite);
+    selectButton();
+    selectText();
   }
 }//End draw
 //
@@ -71,30 +67,16 @@ void mousePressed()
     }
   } //End drawing tools
   //
-  if ( mouseX>selectButtonX && mouseX<selectButtonX+selectButtonWidth && mouseY>selectButtonY && mouseY<selectButtonY+selectButtonHeight ) {
-    if ( selectButtonON == true ) {
-      selectButtonON = false;
-    } else {
-      selectButtonON = true;
-    }
-  } //End selectButton
+  if ( mouseX>selectButtonX && mouseX<selectButtonX+selectButtonWidth && mouseY>selectButtonY && mouseY<selectButtonY+selectButtonHeight ) selectButtonON = true;
   //
   if ( mouseX>selectPenButtonX && mouseX<selectPenButtonX+selectPenButtonWidth && mouseY>selectPenButtonY && mouseY<selectPenButtonY+selectPenButtonHeight ) {
-    if ( selectPenButtonON == true ) {
-      selectPenButtonON = false;
-    } else {
-      selectPenButtonON = true;
-      selectCircleButtonON = false;
-    }
+    selectPenButtonON = true;
+    selectCircleButtonON = false;
   } //End selectPenButton
   //
   if ( mouseX>selectCircleButtonX && mouseX<selectCircleButtonX+selectCircleButtonWidth && mouseY>selectCircleButtonY && mouseY<selectCircleButtonY+selectCircleButtonHeight ) {
-    if ( selectCircleButtonON == true ) {
-      selectCircleButtonON = false;
-    } else {
-      selectCircleButtonON = true;
-      selectPenButtonON = false;
-    }
+    selectCircleButtonON = true;
+    selectPenButtonON = false;
   }
 }//End mousePressed
 //
