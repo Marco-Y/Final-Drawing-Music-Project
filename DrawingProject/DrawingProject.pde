@@ -6,7 +6,7 @@ import ddf.minim.spi.*;
 import ddf.minim.ugens.*;
 
 //Global Variables
-Boolean draw=false, selectButtonON=false, selectPenButtonON=false;
+Boolean draw=false, selectButtonON=false, selectPenButtonON=false, selectCircleButtonON=false;
 int XS=1, S=3, M=5, L=7, XL=9;
 //
 void setup()
@@ -74,7 +74,15 @@ void mousePressed()
     } else {
       selectPenButtonON = true;
     }
-  } //End selectButton
+  } //End selectPenButton
+  //
+  if ( mouseX>selectCircleButtonX && mouseX<selectCircleButtonX+selectCircleButtonWidth && mouseY>selectCircleButtonY && mouseY<selectCircleButtonY+selectCircleButtonHeight ) {
+    if ( selectCircleButtonON == true ) {
+      selectCircleButtonON = false;
+    } else {
+      selectCircleButtonON = true;
+    }
+  }
 }//End mousePressed
 //
 //End MAIN Program

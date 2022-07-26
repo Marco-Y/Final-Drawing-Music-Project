@@ -4,6 +4,8 @@ float selectPenButtonX, selectPenButtonY, selectPenButtonWidth, selectPenButtonH
 float penRectX, penRectY, penRectWidth, penRectHeight;
 float sizeButtonX, sizeButtonY, sizeButtonWidth, sizeButtonHeight;
 float penTipX, penTipY, penTipX2, penTipY2, penTipX3, penTipY3;
+float selectCircleButtonX, selectCircleButtonY, selectCircleButtonWidth, selectCircleButtonHeight;
+float selectCircleEllipseX, selectCircleEllipseY, selectCircleEllipseDiameter;
 //
 void selectButton() {
   selectButtonX = width*0;
@@ -35,8 +37,19 @@ void selectPenButton() {
   triangle(penTipX, penTipY, penTipX2, penTipY2, penTipX3, penTipY3);
   fill(resetWhite);
 }
-
-
+//
+void selectCircleButton() {
+  selectCircleButtonX = selectButtonWidth*2;
+  selectCircleButtonY = selectButtonY;
+  selectCircleButtonWidth = selectButtonWidth;
+  selectCircleButtonHeight = selectButtonHeight;
+  selectCircleEllipseX = selectButtonWidth*2.3;
+  selectCircleEllipseY = selectButtonY;
+  selectCircleEllipseDiameter = selectButtonWidth*0.4;
+  //
+  rect(selectCircleButtonX, selectCircleButtonY, selectCircleButtonWidth, selectCircleButtonHeight);
+  ellipse(selectCircleEllipseX, selectCircleEllipseY, selectCircleEllipseDiameter, selectCircleEllipseDiameter);
+}
 
 
 
