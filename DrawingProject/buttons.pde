@@ -9,12 +9,14 @@ float selectCircleEllipseX, selectCircleEllipseY, selectCircleEllipseDiameter;
 float selectEraserButtonX, selectEraserButtonY, selectEraserButtonWidth, selectEraserButtonHeight;
 float selectEraserShapeX1, selectEraserShapeY1, selectEraserShapeWidth1, selectEraserShapeHeight1;
 float selectEraserShapeX2, selectEraserShapeY2, selectEraserShapeWidth2, selectEraserShapeHeight2;
+float selectColorButtonX, selectColorButtonY, selectColorButtonWidth, selectColorButtonHeight;
 //
 void selectButton() {
   selectButtonX = width*0;
   selectButtonY = height*0;
   selectButtonWidth = selectingSurfaceWidth*1/5;
   selectButtonHeight = selectingSurfaceHeight*1/7;
+  //
   rect(selectButtonX, selectButtonY, selectButtonWidth, selectButtonHeight);
 }
 //
@@ -74,7 +76,15 @@ void selectEraserButton() {
   rect(selectEraserShapeX2, selectEraserShapeY2, selectEraserShapeWidth2, selectEraserShapeHeight2);
   fill(resetWhite);
 }
-
+//
+void selectColorButton() {
+  selectColorButtonX = selectButtonX;
+  selectColorButtonY = selectButtonHeight;
+  selectColorButtonWidth = selectButtonWidth;
+  selectColorButtonHeight = selectButtonHeight;
+  //
+  rect(selectColorButtonX, selectColorButtonY, selectColorButtonWidth, selectColorButtonHeight);
+}
 
 
 

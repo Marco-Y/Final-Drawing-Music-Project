@@ -4,10 +4,10 @@ PFont timesNewRomanFont;
 //String
 String selectText = "Select";
 String sizeText = "Size of pen";
-String selectPenText = "Pen";
+String selectColorText = "Color";
 //float
 float selectTextX, selectTextY, selectTextWidth, selectTextHeight;
-float selectPenTextX, selectPenTextY, selectPenTextWidth, selectPenTextHeight;
+float selectColorTextX, selectColorTextY, selectColorTextWidth, selectColorTextHeight;
 //
 void selectText() {
   selectTextX = width*0;
@@ -23,14 +23,14 @@ void selectText() {
   fill(resetWhite);
 }
 //
-void selectPenText() {
-  selectPenTextX = selectPenButtonX;
-  selectPenTextY = selectPenButtonY;
-  selectPenTextWidth = selectPenButtonWidth;
-  selectPenTextHeight = selectPenButtonHeight;
+void selectColorText() {
+  selectColorTextX = selectColorButtonX;
+  selectColorTextY = selectColorButtonY;
+  selectColorTextWidth = selectColorButtonWidth;
+  selectColorTextHeight = selectColorButtonHeight;
   //
-  fill(defaultGrey);
+  fill(black);
   textAlign(CENTER,CENTER);
   textFont(timesNewRomanFont, 20);
-  text(selectPenText, selectPenTextX, selectPenTextY, selectPenTextWidth, selectPenTextHeight);
+  text(selectColorText, selectColorTextX, selectColorTextY, selectColorTextWidth, selectColorTextHeight);
 }

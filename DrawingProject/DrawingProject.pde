@@ -30,7 +30,9 @@ void draw()
   fill(resetWhite);
   selectButton();
   selectText();
-  //ellipse( mouseX, mouseY, drawingDiameter, drawingDiameter); //Example Circle Drawing Tool
+  selectColorButton();
+  selectColorText();
+  //
   if ( selectButtonON == true && mouseX>selectButtonX && mouseX<selectButtonX+selectButtonWidth && mouseY>selectButtonY && mouseY<selectButtonY+selectButtonHeight ) {
     fill(resetWhite);
     selectPenButton();
@@ -85,18 +87,18 @@ void mousePressed()
     selectPenButtonON = true;
     selectCircleButtonON = false;
     selectEraserButtonON = false;
-  } //End selectPenButton
+  } //End selectPenButtonON
   //
   if ( mouseX>selectCircleButtonX && mouseX<selectCircleButtonX+selectCircleButtonWidth && mouseY>selectCircleButtonY && mouseY<selectCircleButtonY+selectCircleButtonHeight ) {
     selectPenButtonON = false;
     selectCircleButtonON = true;
     selectEraserButtonON = false;
-  }
+  } //End selectCircleButtonON
   if ( mouseX>selectEraserButtonX && mouseX<selectEraserButtonX+selectEraserButtonWidth && mouseY>selectEraserButtonY && mouseY<selectEraserButtonY+selectEraserButtonHeight ) {
     selectPenButtonON = false;
     selectCircleButtonON = false;
     selectEraserButtonON = true;
-  }
+  } //End selectEraserButtonON
 }//End mousePressed
 //
 //End MAIN Program
