@@ -6,8 +6,8 @@ import ddf.minim.spi.*;
 import ddf.minim.ugens.*;
 
 //Global Variables
-Boolean draw=false, selectButtonON=false, selectPenButtonON=false, selectCircleButtonON=false, selectEraserButtonON=false;
-int XS=1, S=3, M=5, L=7, XL=9;
+Boolean draw=false, selectButtonON=false, selectPenButtonON=false, selectCircleButtonON=false, selectEraserButtonON=false, selectColorButtonON=false;
+int XXS=1, XS=3, S=5, M=7, L=9, XL=12, XXL=15;
 //
 void setup()
 {
@@ -15,6 +15,28 @@ void setup()
   //Display Orientation Checker
   //Display and CANVAS Checker
   size(1200, 750); //Landscape (Portrait or Square)
+  println ("width:", width, "\t height:", height, "\t displayWidth:", displayWidth, "\t\t displayHeight:", displayHeight);
+  int appWidth = width;
+  int appHeight = height;
+  if ( width > displayWidth || height > displayHeight ) {
+    //CANVAS is too Big
+    appWidth = displayWidth;
+    appHeight = displayHeight;
+    println("CANVAS needs to be readjusted to your monitor");
+  } else {
+    println("CANVAS is good to go.");
+  }//End CANVAS in Display Checker
+  //
+  String ls="Landscape or Square", p="portrait", DO="Display Orientation:", instruct="Please turn your phone";
+  String orientation = ( appWidth >= appHeight ) ? ls : p; //Ternary Operator, repeats the IF-Else structure to populate a variable
+  println( DO, orientation );
+  if ( orientation==ls ) { //Test for chosen display orientation
+    println("Display Orientation is good to go");
+  } else {
+    appWidth *= 0; //assignment operator , works like appWidth = appWidth*0
+    appHeight *= 0;
+    println(instruct);
+  }
   //
   populationVariables();
   //
@@ -32,7 +54,6 @@ void draw()
   selectText();
   selectColorButton();
   selectColorText();
-  selectGreyButton();
   //
   if ( selectButtonON == true && mouseX>selectButtonX && mouseX<selectButtonX+selectButtonWidth && mouseY>selectButtonY && mouseY<selectButtonY+selectButtonHeight ) {
     fill(resetWhite);
@@ -67,6 +88,9 @@ void draw()
     selectText();
     stroke(1);
   }
+  if ( selectColorButtonON==true && mouseX>selectColorButtonX && mouseX<selectColorButtonX+selectColorButtonWidth && mouseY>selectColorButtonY && mouseY<selectColorButtonY+selectColorButtonHeight ) {
+    selectGreyButton();
+  }
 }//End draw
 //
 void keyPressed() {
@@ -82,6 +106,8 @@ void mousePressed()
     }
   } //End drawing tools
   //
+  //Select
+  //
   if ( mouseX>selectButtonX && mouseX<selectButtonX+selectButtonWidth && mouseY>selectButtonY && mouseY<selectButtonY+selectButtonHeight ) selectButtonON = true;
   //
   if ( mouseX>selectPenButtonX && mouseX<selectPenButtonX+selectPenButtonWidth && mouseY>selectPenButtonY && mouseY<selectPenButtonY+selectPenButtonHeight ) {
@@ -95,11 +121,18 @@ void mousePressed()
     selectCircleButtonON = true;
     selectEraserButtonON = false;
   } //End selectCircleButtonON
+  //
   if ( mouseX>selectEraserButtonX && mouseX<selectEraserButtonX+selectEraserButtonWidth && mouseY>selectEraserButtonY && mouseY<selectEraserButtonY+selectEraserButtonHeight ) {
     selectPenButtonON = false;
     selectCircleButtonON = false;
     selectEraserButtonON = true;
   } //End selectEraserButtonON
+  //
+  //Color
+  //
+  if ( mouseX>selectColorButtonX && mouseX<selectColorButtonX+selectColorButtonWidth && mouseY>selectColorButtonY && mouseY<selectColorButtonY+selectColorButtonHeight ) {
+    selectColorButtonON=true;
+  }
 }//End mousePressed
 //
 //End MAIN Program

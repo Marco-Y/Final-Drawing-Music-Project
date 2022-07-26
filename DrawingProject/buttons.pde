@@ -11,7 +11,8 @@ float selectEraserShapeX1, selectEraserShapeY1, selectEraserShapeWidth1, selectE
 float selectEraserShapeX2, selectEraserShapeY2, selectEraserShapeWidth2, selectEraserShapeHeight2;
 float selectColorButtonX, selectColorButtonY, selectColorButtonWidth, selectColorButtonHeight;
 float selectGreyButtonX, selectGreyButtonY, selectGreyButtonWidth, selectGreyButtonHeight;
-//float selectGreyEllipseX, selectGreyEllipseY, selectGreyEllipseDiameter;
+float selectWhiteButtonX, selectWhiteButtonY, selectWhiteButtonWidth, selectWhiteButtonHeight;
+float selectGreyEllipseX, selectGreyEllipseY, selectGreyEllipseDiameter;
 
 //
 //Select Pen/Circle Stamp/Eraser buttons
@@ -94,18 +95,23 @@ void selectColorButton() {
 }
 //
 void selectGreyButton() {
-  selectGreyButtonX = selectColorButtonWidth;
-  selectGreyButtonY = selectColorButtonY;
-  selectGreyButtonWidth = selectColorButtonWidth*1/2;
-  selectGreyButtonHeight = selectColorButtonHeight*1/2;
+  selectGreyEllipseX = selectColorButtonWidth+selectColorButtonWidth*1/4;
+  selectGreyEllipseY = selectColorButtonY+selectColorButtonHeight*1/4;
+  selectGreyEllipseDiameter = selectColorButtonWidth*1/4;
   fill(defaultGrey);
-  rect(selectGreyButtonX, selectGreyButtonY, selectGreyButtonWidth, selectGreyButtonHeight);
+  ellipse(selectGreyEllipseX, selectGreyEllipseY, selectGreyEllipseDiameter, selectGreyEllipseDiameter);
   fill(resetWhite);
-  //ellipse(selectGreyEllipseX, selectGreyEllipseY, selectGreyEllipseDiameter, selectGreyEllipseDiameter);
 }
-
+/*
+void selectWhiteButton() {
+  selectWhiteButtonX = selectGreyButtonX+selectGreyButtonWidth*1/2;
+  selectWhiteButtonY = selectGreyEllipseY;
+  selectWhiteButtonWidth = selectGreyEllipseDiameter;
+  fill(resetWhite);
+  rect(selectWhiteButtonX, selectWhiteButtonY, selectWhiteButtonWidth, selectWhiteButtonHeight);
+}
 
 
 //void sizeButton() {
 //
-//}
+//}*/
