@@ -27,10 +27,10 @@ void setup()
 //
 void draw()
 {
-  //ellipse( mouseX, mouseY, drawingDiameter, drawingDiameter); //Example Circle Drawing Tool
   fill(resetWhite);
   selectButton();
   selectText();
+  //ellipse( mouseX, mouseY, drawingDiameter, drawingDiameter); //Example Circle Drawing Tool
   if ( selectButtonON == true && mouseX>selectButtonX && mouseX<selectButtonX+selectButtonWidth && mouseY>selectButtonY && mouseY<selectButtonY+selectButtonHeight ) {
     fill(resetWhite);
     selectPenButton();
@@ -41,6 +41,8 @@ void draw()
       fill(defaultGrey);
       rect( selectingSurfaceX, selectingSurfaceY, selectingSurfaceWidth, selectingSurfaceHeight );
       fill(resetWhite);
+      selectButton();
+      selectText();
     }
   }
 }//End draw
