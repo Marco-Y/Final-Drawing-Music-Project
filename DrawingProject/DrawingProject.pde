@@ -28,23 +28,21 @@ void setup()
 void draw()
 {
   //ellipse( mouseX, mouseY, drawingDiameter, drawingDiameter); //Example Circle Drawing Tool
-  if ( draw == true && mouseX>drawingSurfaceX && mouseX<drawingSurfaceX+drawingSurfaceWidth && mouseY>drawingSurfaceY && mouseY<drawingSurfaceY+drawingSurfaceHeight) {
-    line (mouseX, mouseY, pmouseX, pmouseY);
-    fill(defaultGrey);
-    rect( selectingSurfaceX, selectingSurfaceY, selectingSurfaceWidth, selectingSurfaceHeight );
-    fill(resetWhite);
-  }
+  fill(resetWhite);
   selectButton();
   rect(selectButtonX, selectButtonY, selectButtonWidth, selectButtonHeight);
   selectText();
-  /*if ( selectButtonON == true && mouseX>selectButtonX && mouseX<selectButtonX+selectButtonWidth && mouseY>selectButtonY && mouseY<selectButtonY+selectButtonHeight ) {
-   line (mouseX, mouseY, pmouseX, pmouseY);
-   fill(defaultGrey);
-   rect( selectingSurfaceX, selectingSurfaceY, selectingSurfaceWidth, selectingSurfaceHeight );
-   fill(resetWhite);
-   selectPenButton();
-   rect(selectPenButtonX, selectPenButtonY, selectPenButtonWidth, selectPenButtonHeight);
-   }*/
+  if ( selectButtonON == true && mouseX>selectButtonX && mouseX<selectButtonX+selectButtonWidth && mouseY>selectButtonY && mouseY<selectButtonY+selectButtonHeight ) {
+    fill(resetWhite);
+    selectPenButton();
+    rect(selectPenButtonX, selectPenButtonY, selectPenButtonWidth, selectPenButtonHeight);
+    if ( draw == true && mouseX>drawingSurfaceX && mouseX<drawingSurfaceX+drawingSurfaceWidth && mouseY>drawingSurfaceY && mouseY<drawingSurfaceY+drawingSurfaceHeight) {
+      line (mouseX, mouseY, pmouseX, pmouseY);
+      fill(defaultGrey);
+      rect( selectingSurfaceX, selectingSurfaceY, selectingSurfaceWidth, selectingSurfaceHeight );
+      fill(resetWhite);
+    }
+  }
 }//End draw
 //
 void keyPressed() {
