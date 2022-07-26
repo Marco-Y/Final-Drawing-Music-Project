@@ -27,8 +27,6 @@ void setup()
 //
 void draw()
 {
-  selectButton();
-  selectText();
   //ellipse( mouseX, mouseY, drawingDiameter, drawingDiameter); //Example Circle Drawing Tool
   if ( draw == true && mouseX>drawingSurfaceX && mouseX<drawingSurfaceX+drawingSurfaceWidth && mouseY>drawingSurfaceY && mouseY<drawingSurfaceY+drawingSurfaceHeight) {
     line (mouseX, mouseY, pmouseX, pmouseY);
@@ -36,13 +34,17 @@ void draw()
     rect( selectingSurfaceX, selectingSurfaceY, selectingSurfaceWidth, selectingSurfaceHeight );
     fill(resetWhite);
   }
-  if ( selectButtonON == true && mouseX>selectButtonX && mouseX<selectButtonX+selectButtonWidth && mouseY>selectButtonY && mouseY<selectButtonY+selectButtonHeight ) {
-    line (mouseX, mouseY, pmouseX, pmouseY);
-    fill(defaultGrey);
-    rect( selectingSurfaceX, selectingSurfaceY, selectingSurfaceWidth, selectingSurfaceHeight );
-    fill(resetWhite);
-    selectPenButton();
-  }
+  selectButton();
+  rect(selectButtonX, selectButtonY, selectButtonWidth, selectButtonHeight);
+  selectText();
+  /*if ( selectButtonON == true && mouseX>selectButtonX && mouseX<selectButtonX+selectButtonWidth && mouseY>selectButtonY && mouseY<selectButtonY+selectButtonHeight ) {
+   line (mouseX, mouseY, pmouseX, pmouseY);
+   fill(defaultGrey);
+   rect( selectingSurfaceX, selectingSurfaceY, selectingSurfaceWidth, selectingSurfaceHeight );
+   fill(resetWhite);
+   selectPenButton();
+   rect(selectPenButtonX, selectPenButtonY, selectPenButtonWidth, selectPenButtonHeight);
+   }*/
 }//End draw
 //
 void keyPressed() {

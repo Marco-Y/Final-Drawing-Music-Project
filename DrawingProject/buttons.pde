@@ -8,8 +8,7 @@ void selectButton() {
   selectButtonY = height*0;
   selectButtonWidth = selectingSurfaceWidth*1/5;
   selectButtonHeight = selectingSurfaceHeight*1/7;
-  //
-  rect(selectButtonX, selectButtonY, selectButtonWidth, selectButtonHeight);
+  //rect(selectButtonX, selectButtonY, selectButtonWidth, selectButtonHeight);
 }
 
 void selectPenButton() {
@@ -17,8 +16,7 @@ void selectPenButton() {
   selectPenButtonY = selectButtonY;
   selectPenButtonWidth = selectButtonWidth;
   selectPenButtonHeight = selectButtonHeight;
-  //
-  rect(selectPenButtonX, selectPenButtonY, selectPenButtonWidth, selectPenButtonHeight);
+  //rect(selectPenButtonX, selectPenButtonY, selectPenButtonWidth, selectPenButtonHeight);
 }
   
 
