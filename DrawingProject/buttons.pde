@@ -11,8 +11,9 @@ float selectEraserShapeX1, selectEraserShapeY1, selectEraserShapeWidth1, selectE
 float selectEraserShapeX2, selectEraserShapeY2, selectEraserShapeWidth2, selectEraserShapeHeight2;
 float selectColorButtonX, selectColorButtonY, selectColorButtonWidth, selectColorButtonHeight;
 float selectGreyButtonX, selectGreyButtonY, selectGreyButtonWidth, selectGreyButtonHeight;
-float selectWhiteButtonX, selectWhiteButtonY, selectWhiteButtonWidth, selectWhiteButtonHeight;
 float selectGreyEllipseX, selectGreyEllipseY, selectGreyEllipseDiameter;
+float selectWhiteButtonX, selectWhiteButtonY, selectWhiteButtonWidth, selectWhiteButtonHeight;
+float selectWhiteEllipseX, selectWhiteEllipseY, selectWhiteEllipseDiameter;
 
 //
 //Select Pen/Circle Stamp/Eraser buttons
@@ -95,23 +96,36 @@ void selectColorButton() {
 }
 //
 void selectGreyButton() {
+  selectGreyButtonX = selectColorButtonWidth;
+  selectGreyButtonY = selectColorButtonY;
+  selectGreyButtonWidth = selectColorButtonWidth*1/2;
+  selectGreyButtonHeight = selectColorButtonHeight*1/2;
   selectGreyEllipseX = selectColorButtonWidth+selectColorButtonWidth*1/4;
   selectGreyEllipseY = selectColorButtonY+selectColorButtonHeight*1/4;
   selectGreyEllipseDiameter = selectColorButtonWidth*1/4;
+  //
+  fill(resetWhite);
+  rect(selectGreyButtonX, selectGreyButtonY, selectGreyButtonWidth, selectGreyButtonHeight);
   fill(defaultGrey);
   ellipse(selectGreyEllipseX, selectGreyEllipseY, selectGreyEllipseDiameter, selectGreyEllipseDiameter);
   fill(resetWhite);
 }
-/*
+//
 void selectWhiteButton() {
-  selectWhiteButtonX = selectGreyButtonX+selectGreyButtonWidth*1/2;
-  selectWhiteButtonY = selectGreyEllipseY;
-  selectWhiteButtonWidth = selectGreyEllipseDiameter;
+  selectWhiteButtonX = selectColorButtonWidth+selectGreyButtonWidth;
+  selectWhiteButtonY = selectGreyButtonY;
+  selectWhiteButtonWidth = selectGreyButtonWidth;
+  selectWhiteButtonHeight = selectGreyButtonHeight;
+  selectWhiteEllipseX = selectColorButtonWidth+selectGreyButtonWidth*3/2;
+  selectWhiteEllipseY = selectGreyEllipseY;
+  selectWhiteEllipseDiameter = selectGreyEllipseDiameter;
+  //
   fill(resetWhite);
   rect(selectWhiteButtonX, selectWhiteButtonY, selectWhiteButtonWidth, selectWhiteButtonHeight);
+  ellipse(selectWhiteEllipseX, selectWhiteEllipseY, selectWhiteEllipseDiameter, selectWhiteEllipseDiameter);
 }
 
 
 //void sizeButton() {
 //
-//}*/
+//}
