@@ -6,7 +6,7 @@ import ddf.minim.spi.*;
 import ddf.minim.ugens.*;
 
 //Global Variables
-Boolean draw=false, selectButtonON=false, selectPenButtonON=false, selectCircleButtonON=false;
+Boolean draw=false, selectButtonON=false, selectPenButtonON=false, selectCircleButtonON=false, selectEraserButtonON=false;
 int XS=1, S=3, M=5, L=7, XL=9;
 //
 void setup()
@@ -35,6 +35,7 @@ void draw()
     fill(resetWhite);
     selectPenButton();
     selectCircleButton();
+    selectEraserButton();
   }
   if ( selectPenButtonON==true && draw == true && mouseX>drawingSurfaceX && mouseX<drawingSurfaceX+drawingSurfaceWidth && mouseY>drawingSurfaceY && mouseY<drawingSurfaceY+drawingSurfaceHeight) {
     line (mouseX, mouseY, pmouseX, pmouseY); //Pen drawing tool
@@ -51,6 +52,17 @@ void draw()
     fill(resetWhite);
     selectButton();
     selectText();
+  }
+  if ( selectEraserButtonON==true && draw == true && mouseX>drawingSurfaceX && mouseX<drawingSurfaceX+drawingSurfaceWidth && mouseY>drawingSurfaceY && mouseY<drawingSurfaceY+drawingSurfaceHeight) {
+    fill(resetWhite);
+    noStroke();
+    ellipse( mouseX, mouseY, drawingDiameter, drawingDiameter); //Circle Erasing Tool
+    fill(defaultGrey);
+    rect( selectingSurfaceX, selectingSurfaceY, selectingSurfaceWidth, selectingSurfaceHeight );
+    fill(resetWhite);
+    selectButton();
+    selectText();
+    stroke(1);
   }
 }//End draw
 //
@@ -72,11 +84,18 @@ void mousePressed()
   if ( mouseX>selectPenButtonX && mouseX<selectPenButtonX+selectPenButtonWidth && mouseY>selectPenButtonY && mouseY<selectPenButtonY+selectPenButtonHeight ) {
     selectPenButtonON = true;
     selectCircleButtonON = false;
+    selectEraserButtonON = false;
   } //End selectPenButton
   //
   if ( mouseX>selectCircleButtonX && mouseX<selectCircleButtonX+selectCircleButtonWidth && mouseY>selectCircleButtonY && mouseY<selectCircleButtonY+selectCircleButtonHeight ) {
-    selectCircleButtonON = true;
     selectPenButtonON = false;
+    selectCircleButtonON = true;
+    selectEraserButtonON = false;
+  }
+  if ( mouseX>selectEraserButtonX && mouseX<selectEraserButtonX+selectEraserButtonWidth && mouseY>selectEraserButtonY && mouseY<selectEraserButtonY+selectEraserButtonHeight ) {
+    selectPenButtonON = false;
+    selectCircleButtonON = false;
+    selectEraserButtonON = true;
   }
 }//End mousePressed
 //
