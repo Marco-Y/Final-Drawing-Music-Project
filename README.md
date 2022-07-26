@@ -1,5 +1,4 @@
 # Final-Drawing-Music-Project
-Not using old ones
 
 To Do List
 - [x] Line drawing tool
