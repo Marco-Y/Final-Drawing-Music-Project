@@ -8,9 +8,9 @@
   selectButton();
   selectText();
   if (mouseX>selectColorButtonX && mouseX<selectColorButtonX+selectColorButtonWidth && mouseY>selectColorButtonY && mouseY<selectColorButtonY+selectColorButtonHeight) {
-    buttonFill = green;
+    buttonFill = cyan;
   } else {
-    buttonFill = red;
+    buttonFill = pink;
   }
   fill(buttonFill);
   selectColorButton();
