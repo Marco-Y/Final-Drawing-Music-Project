@@ -32,6 +32,7 @@ void draw()
   selectText();
   selectColorButton();
   selectColorText();
+  selectGreyButton();
   //
   if ( selectButtonON == true && mouseX>selectButtonX && mouseX<selectButtonX+selectButtonWidth && mouseY>selectButtonY && mouseY<selectButtonY+selectButtonHeight ) {
     fill(resetWhite);
