@@ -9,7 +9,7 @@ import ddf.minim.ugens.*;
 Boolean draw=false;
 Boolean selectButtonON=false, selectPenButtonON=false, selectCircleButtonON=false, selectEraserButtonON=false;
 Boolean selectColorButtonON=false;
-Boolean selectGreyButtonON=false, selectBlackButtonON=false;
+Boolean selectGreyButtonON=false, selectBlackButtonON=false, selectBrownButtonON=false;
 int XS=1, S=4, M=7, L=10, XL=13, XXL=17;
 //
 void setup()
@@ -56,11 +56,14 @@ void draw()
   selectDrawButtons();
   fill(resetWhite);
   //
+  //Select
+  //
   if ( selectButtonON == true && mouseX>selectButtonX && mouseX<selectButtonX+selectButtonWidth && mouseY>selectButtonY && mouseY<selectButtonY+selectButtonHeight ) {
     selectPenButton();
     selectCircleButton();
     selectEraserButton();
   }
+  //
   if ( selectPenButtonON==true && draw == true && mouseX>drawingSurfaceX && mouseX<drawingSurfaceX+drawingSurfaceWidth && mouseY>drawingSurfaceY && mouseY<drawingSurfaceY+drawingSurfaceHeight) {
     line (mouseX, mouseY, pmouseX, pmouseY); //Pen drawing tool
     fill(defaultGrey);
@@ -68,6 +71,7 @@ void draw()
     fill(resetWhite);
     selectDrawButtons();
   }
+  //
   if ( selectCircleButtonON==true && draw == true && mouseX>drawingSurfaceX && mouseX<drawingSurfaceX+drawingSurfaceWidth && mouseY>drawingSurfaceY && mouseY<drawingSurfaceY+drawingSurfaceHeight) {
     ellipse( mouseX, mouseY, drawingDiameter, drawingDiameter); //Circle Drawing Tool
     fill(defaultGrey);
@@ -75,6 +79,7 @@ void draw()
     fill(resetWhite);
     selectDrawButtons();
   }
+  //
   if ( selectEraserButtonON==true && draw == true && mouseX>drawingSurfaceX && mouseX<drawingSurfaceX+drawingSurfaceWidth && mouseY>drawingSurfaceY && mouseY<drawingSurfaceY+drawingSurfaceHeight) {
     fill(resetWhite);
     noStroke();
@@ -85,17 +90,27 @@ void draw()
     selectDrawButtons();
     stroke(1);
   }
+  //
+  //Color
+  //
   if ( selectColorButtonON==true && mouseX>selectColorButtonX && mouseX<selectColorButtonX+selectColorButtonWidth && mouseY>selectColorButtonY && mouseY<selectColorButtonY+selectColorButtonHeight ) {
     selectGreyButton();
     selectBlackButton();
+    selectBrownButton();
   }
+  //
   if ( selectGreyButtonON==true && draw == true && mouseX>drawingSurfaceX && mouseX<drawingSurfaceX+drawingSurfaceWidth && mouseY>drawingSurfaceY && mouseY<drawingSurfaceY+drawingSurfaceHeight) {
     stroke(defaultGrey);
     fill(defaultGrey);
   }
+  //
   if ( selectBlackButtonON==true && draw == true && mouseX>drawingSurfaceX && mouseX<drawingSurfaceX+drawingSurfaceWidth && mouseY>drawingSurfaceY && mouseY<drawingSurfaceY+drawingSurfaceHeight) {
     stroke(black);
     fill(black);
+  }
+  if ( selectBrownButtonON==true && draw == true && mouseX>drawingSurfaceX && mouseX<drawingSurfaceX+drawingSurfaceWidth && mouseY>drawingSurfaceY && mouseY<drawingSurfaceY+drawingSurfaceHeight) {
+    stroke(brown);
+    fill(brown);
   }
 }//End draw
 //
@@ -143,11 +158,19 @@ void mousePressed()
   if ( mouseX>selectGreyButtonX && mouseX<selectGreyButtonX+selectGreyButtonWidth && mouseY>selectGreyButtonY && mouseY<selectGreyButtonY+selectGreyButtonHeight ) {
     selectGreyButtonON=true;
     selectBlackButtonON=false;
+    selectBrownButtonON=false;
   }
   //
   if ( mouseX>selectBlackButtonX && mouseX<selectBlackButtonX+selectBlackButtonWidth && mouseY>selectBlackButtonY && mouseY<selectBlackButtonY+selectBlackButtonHeight ) {
     selectGreyButtonON=false;
     selectBlackButtonON=true;
+    selectBrownButtonON=false;
+  }
+  //
+  if ( mouseX>selectBrownButtonX && mouseX<selectBrownButtonX+selectBrownButtonWidth && mouseY>selectBrownButtonY && mouseY<selectBrownButtonY+selectBrownButtonHeight ) {
+    selectGreyButtonON=false;
+    selectBlackButtonON=false;
+    selectBrownButtonON=true;
   }
   //
 }//End mousePressed
