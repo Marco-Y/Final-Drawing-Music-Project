@@ -34,10 +34,21 @@ void draw()
   if ( selectButtonON == true && mouseX>selectButtonX && mouseX<selectButtonX+selectButtonWidth && mouseY>selectButtonY && mouseY<selectButtonY+selectButtonHeight ) {
     fill(resetWhite);
     selectPenButton();
+    selectCircleButton();
   }
   if (selectPenButtonON=true) {
     if ( draw == true && mouseX>drawingSurfaceX && mouseX<drawingSurfaceX+drawingSurfaceWidth && mouseY>drawingSurfaceY && mouseY<drawingSurfaceY+drawingSurfaceHeight) {
-      line (mouseX, mouseY, pmouseX, pmouseY);
+      line (mouseX, mouseY, pmouseX, pmouseY); //Pen drawing tool
+      fill(defaultGrey);
+      rect( selectingSurfaceX, selectingSurfaceY, selectingSurfaceWidth, selectingSurfaceHeight );
+      fill(resetWhite);
+      selectButton();
+      selectText();
+    }
+  }
+  if (selectCircleButtonON=true) {
+    if ( draw == true && mouseX>drawingSurfaceX && mouseX<drawingSurfaceX+drawingSurfaceWidth && mouseY>drawingSurfaceY && mouseY<drawingSurfaceY+drawingSurfaceHeight) {
+      ellipse( mouseX, mouseY, drawingDiameter, drawingDiameter); //Circle Drawing Tool
       fill(defaultGrey);
       rect( selectingSurfaceX, selectingSurfaceY, selectingSurfaceWidth, selectingSurfaceHeight );
       fill(resetWhite);
@@ -73,6 +84,7 @@ void mousePressed()
       selectPenButtonON = false;
     } else {
       selectPenButtonON = true;
+      selectCircleButtonON = false;
     }
   } //End selectPenButton
   //
@@ -81,6 +93,7 @@ void mousePressed()
       selectCircleButtonON = false;
     } else {
       selectCircleButtonON = true;
+      selectPenButtonON = false;
     }
   }
 }//End mousePressed

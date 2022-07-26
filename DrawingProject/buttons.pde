@@ -43,8 +43,8 @@ void selectCircleButton() {
   selectCircleButtonY = selectButtonY;
   selectCircleButtonWidth = selectButtonWidth;
   selectCircleButtonHeight = selectButtonHeight;
-  selectCircleEllipseX = selectButtonWidth*2.3;
-  selectCircleEllipseY = selectButtonY;
+  selectCircleEllipseX = selectButtonWidth*2.5;
+  selectCircleEllipseY = selectButtonHeight*1/2;
   selectCircleEllipseDiameter = selectButtonWidth*0.4;
   //
   rect(selectCircleButtonX, selectCircleButtonY, selectCircleButtonWidth, selectCircleButtonHeight);
