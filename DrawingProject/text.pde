@@ -33,5 +33,4 @@ void selectPenText() {
   textAlign(CENTER,CENTER);
   textFont(timesNewRomanFont, 20);
   text(selectPenText, selectPenTextX, selectPenTextY, selectPenTextWidth, selectPenTextHeight);
-  
 }

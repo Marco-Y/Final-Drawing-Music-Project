@@ -6,7 +6,7 @@ import ddf.minim.spi.*;
 import ddf.minim.ugens.*;
 
 //Global Variables
-Boolean draw=false, selectButtonON=false;
+Boolean draw=false, selectButtonON=false, selectPenButtonON=false;
 int XS=1, S=3, M=5, L=7, XL=9;
 //
 void setup()
@@ -30,12 +30,12 @@ void draw()
   //ellipse( mouseX, mouseY, drawingDiameter, drawingDiameter); //Example Circle Drawing Tool
   fill(resetWhite);
   selectButton();
-  rect(selectButtonX, selectButtonY, selectButtonWidth, selectButtonHeight);
   selectText();
   if ( selectButtonON == true && mouseX>selectButtonX && mouseX<selectButtonX+selectButtonWidth && mouseY>selectButtonY && mouseY<selectButtonY+selectButtonHeight ) {
     fill(resetWhite);
     selectPenButton();
-    rect(selectPenButtonX, selectPenButtonY, selectPenButtonWidth, selectPenButtonHeight);
+  }
+  if (selectPenButtonON=true) {
     if ( draw == true && mouseX>drawingSurfaceX && mouseX<drawingSurfaceX+drawingSurfaceWidth && mouseY>drawingSurfaceY && mouseY<drawingSurfaceY+drawingSurfaceHeight) {
       line (mouseX, mouseY, pmouseX, pmouseY);
       fill(defaultGrey);
@@ -64,7 +64,15 @@ void mousePressed()
     } else {
       selectButtonON = true;
     }
-  } //End drawing tools
+  } //End selectButton
+  //
+  if ( mouseX>selectPenButtonX && mouseX<selectPenButtonX+selectPenButtonWidth && mouseY>selectPenButtonY && mouseY<selectPenButtonY+selectPenButtonHeight ) {
+    if ( selectPenButtonON == true ) {
+      selectPenButtonON = false;
+    } else {
+      selectPenButtonON = true;
+    }
+  } //End selectButton
 }//End mousePressed
 //
 //End MAIN Program
