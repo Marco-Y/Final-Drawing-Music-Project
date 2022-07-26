@@ -9,8 +9,8 @@ import ddf.minim.ugens.*;
 Boolean draw=false;
 Boolean selectButtonON=false, selectPenButtonON=false, selectCircleButtonON=false, selectEraserButtonON=false;
 Boolean selectColorButtonON=false;
-Boolean selectGreyButtonON=false, selectWhiteButtonON=false;
-int XXS=1, XS=3, S=5, M=7, L=9, XL=12, XXL=15;
+Boolean selectGreyButtonON=false, selectBlackButtonON=false;
+int XS=1, S=4, M=7, L=10, XL=13, XXL=17;
 //
 void setup()
 {
@@ -57,7 +57,6 @@ void draw()
   fill(resetWhite);
   //
   if ( selectButtonON == true && mouseX>selectButtonX && mouseX<selectButtonX+selectButtonWidth && mouseY>selectButtonY && mouseY<selectButtonY+selectButtonHeight ) {
-    fill(resetWhite);
     selectPenButton();
     selectCircleButton();
     selectEraserButton();
@@ -88,15 +87,15 @@ void draw()
   }
   if ( selectColorButtonON==true && mouseX>selectColorButtonX && mouseX<selectColorButtonX+selectColorButtonWidth && mouseY>selectColorButtonY && mouseY<selectColorButtonY+selectColorButtonHeight ) {
     selectGreyButton();
-    selectWhiteButton();
+    selectBlackButton();
   }
   if ( selectGreyButtonON==true && draw == true && mouseX>drawingSurfaceX && mouseX<drawingSurfaceX+drawingSurfaceWidth && mouseY>drawingSurfaceY && mouseY<drawingSurfaceY+drawingSurfaceHeight) {
     stroke(defaultGrey);
     fill(defaultGrey);
   }
-  if ( selectWhiteButtonON==true && draw == true && mouseX>drawingSurfaceX && mouseX<drawingSurfaceX+drawingSurfaceWidth && mouseY>drawingSurfaceY && mouseY<drawingSurfaceY+drawingSurfaceHeight) {
-    stroke(resetWhite);
-    fill(resetWhite);
+  if ( selectBlackButtonON==true && draw == true && mouseX>drawingSurfaceX && mouseX<drawingSurfaceX+drawingSurfaceWidth && mouseY>drawingSurfaceY && mouseY<drawingSurfaceY+drawingSurfaceHeight) {
+    stroke(black);
+    fill(black);
   }
 }//End draw
 //
@@ -143,12 +142,12 @@ void mousePressed()
   //
   if ( mouseX>selectGreyButtonX && mouseX<selectGreyButtonX+selectGreyButtonWidth && mouseY>selectGreyButtonY && mouseY<selectGreyButtonY+selectGreyButtonHeight ) {
     selectGreyButtonON=true;
-    selectWhiteButtonON=false;
+    selectBlackButtonON=false;
   }
   //
-  if ( mouseX>selectWhiteButtonX && mouseX<selectWhiteButtonX+selectWhiteButtonWidth && mouseY>selectWhiteButtonY && mouseY<selectWhiteButtonY+selectWhiteButtonHeight ) {
+  if ( mouseX>selectBlackButtonX && mouseX<selectBlackButtonX+selectBlackButtonWidth && mouseY>selectBlackButtonY && mouseY<selectBlackButtonY+selectBlackButtonHeight ) {
     selectGreyButtonON=false;
-    selectWhiteButtonON=true;
+    selectBlackButtonON=true;
   }
   //
 }//End mousePressed
