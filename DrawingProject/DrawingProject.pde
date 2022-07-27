@@ -316,6 +316,21 @@ void mousePressed()
     selectOrangeButtonON=false;
   }
   //
+  if ( mouseX>selectBlueButtonX && mouseX<selectBlueButtonX+selectBlueButtonWidth && mouseY>selectBlueButtonY && mouseY<selectBlueButtonY+selectBlueButtonHeight ) {
+    selectGreyButtonON=false;
+    selectBlackButtonON=false;
+    selectBrownButtonON=false;
+    selectRedButtonON=false;
+    selectYellowButtonON=false;
+    selectGreenButtonON=false;
+    selectTurquoiseButtonON=false;
+    selectCyanButtonON=false;
+    selectBlueButtonON=true;
+    selectPurpleButtonON=false;
+    selectPinkButtonON=false;
+    selectOrangeButtonON=false;
+  }
+  //
   //
 }//End mousePressed
 //

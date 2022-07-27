@@ -248,6 +248,13 @@ void selectBlueButton() {
   selectBlueButtonHeight = selectTurquoiseButtonHeight;
   selectBlueEllipseX = selectBrownEllipseX;
   selectBlueEllipseY = selectTurquoiseEllipseY;
+  //
+  stroke(black);
+  fill(resetWhite);
+  rect(selectBlueButtonX, selectBlueButtonY, selectBlueButtonWidth, selectBlueButtonHeight);
+  fill(turquoise);
+  ellipse(selectBlueEllipseX, selectBlueEllipseY, colorEllipseDiameter, colorEllipseDiameter);
+  fill(resetWhite);
 }
 //
 //
