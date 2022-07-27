@@ -8,6 +8,7 @@ import ddf.minim.ugens.*;
 //Global Variables
 Minim minim;
 AudioPlayer soundEffect1, soundEffect2, soundEffect3, soundEffect4, soundEffect5, soundEffect6, soundEffect7, soundEffect8, soundEffect9;
+AudioPlayer soundEffect10, soundEffect11;
 Boolean draw=false;
 Boolean selectButtonON=false, selectPenButtonON=false, selectCircleButtonON=false, selectEraserButtonON=false;
 Boolean selectColorButtonON=false;
@@ -31,6 +32,8 @@ void setup()
   soundEffect7 = minim.loadFile("Winding Alarm Clock copy.mp3"); //Size Select M Sound
   soundEffect8 = minim.loadFile("Winding Alarm Clock copy 2.mp3"); ///Size Select L Sound
   soundEffect9 = minim.loadFile("Pen Writing .mp3"); //Pen Writing Sound
+  soundEffect10 = minim.loadFile("Swoosh copy.mp3"); //Color
+  soundEffect11 = minim.loadFile("Swoosh copy 2.mp3");
   //
   println ("width:", width, "\t height:", height, "\t displayWidth:", displayWidth, "\t\t displayHeight:", displayHeight);
   int appWidth = width;
@@ -431,6 +434,8 @@ void mousePressed()
     selectPinkButtonON=false;
     selectOrangeButtonON=true;
   }
+  //
+  selectColorSoundEffects();
   //
   if ( mouseX>sizeButtonX && mouseX<sizeButtonX+sizeButtonWidth && mouseY>sizeButtonY && mouseY<sizeButtonY+sizeButtonHeight ) {
     sizeButtonON=true;
