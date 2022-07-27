@@ -182,6 +182,9 @@ void draw()
   if ( sizeButtonON=true && mouseX>sizeButtonX && mouseX<sizeButtonX+sizeButtonWidth && mouseY>sizeButtonY && mouseY<sizeButtonY+sizeButtonHeight ) {
     sizeXSButton();
   }
+  if ( xsSizeON=true && draw == true && mouseX>drawingSurfaceX && mouseX<drawingSurfaceX+drawingSurfaceWidth && mouseY>drawingSurfaceY && mouseY<drawingSurfaceY+drawingSurfaceHeight ) {
+    strokeWeight(width*1/100);
+  }
 }//End draw
 //
 void keyPressed() {
@@ -414,7 +417,7 @@ void mousePressed()
     sizeButtonON=true;
   }
   //
-  if ( mouseX>sizeButtonX && mouseX<sizeButtonX+sizeButtonWidth && mouseY>sizeButtonY && mouseY<sizeButtonY+sizeButtonHeight ) {
+  if ( mouseX>sizeXSButtonX-sizeXSButtonDiameter/2 && mouseX<sizeXSButtonX+sizeXSButtonDiameter/2 && mouseY>sizeXSButtonY-sizeXSButtonDiameter/2 && mouseY<sizeXSButtonY+sizeXSButtonDiameter/2 ) {
     xsSizeON=true;
     sSizeON=false; 
     mSizeON=false;

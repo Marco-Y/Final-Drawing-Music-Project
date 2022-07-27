@@ -324,7 +324,7 @@ void sizeButton() {
 //
 void sizeXSButton() {
   sizeXSButtonX = selectButtonWidth*3/2;
-  sizeXSButtonY = sizeButtonY;
+  sizeXSButtonY = sizeButtonY+selectButtonHeight*1/2;
   sizeXSButtonDiameter = width*1/100;
   //
   ellipse(sizeXSButtonX, sizeXSButtonY, sizeXSButtonDiameter, sizeXSButtonDiameter);
