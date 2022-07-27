@@ -30,6 +30,10 @@ float selectCyanButtonX, selectCyanButtonY, selectCyanButtonWidth, selectCyanBut
 float selectCyanEllipseX, selectCyanEllipseY;
 float selectBlueButtonX, selectBlueButtonY, selectBlueButtonWidth, selectBlueButtonHeight;
 float selectBlueEllipseX, selectBlueEllipseY;
+float selectPurpleButtonX, selectPurpleButtonY, selectPurpleButtonWidth, selectPurpleButtonHeight;
+float selectPurpleEllipseX, selectPurpleEllipseY;
+float selectPinkButtonX, selectPinkButtonY, selectPinkButtonWidth, selectPinkButtonHeight;
+float selectPinkEllipseX, selectPinkEllipseY;
 //
 //Select Pen/Circle Stamp/Eraser buttons
 //
@@ -252,11 +256,42 @@ void selectBlueButton() {
   stroke(black);
   fill(resetWhite);
   rect(selectBlueButtonX, selectBlueButtonY, selectBlueButtonWidth, selectBlueButtonHeight);
-  fill(turquoise);
+  fill(blue);
   ellipse(selectBlueEllipseX, selectBlueEllipseY, colorEllipseDiameter, colorEllipseDiameter);
   fill(resetWhite);
 }
 //
+void selectPurpleButton() {
+  selectPurpleButtonX = selectRedButtonX;
+  selectPurpleButtonY = selectTurquoiseButtonY;
+  selectPurpleButtonWidth = selectTurquoiseButtonWidth;
+  selectPurpleButtonHeight = selectTurquoiseButtonHeight;
+  selectPurpleEllipseX = selectRedEllipseX;
+  selectPurpleEllipseY = selectTurquoiseEllipseY;
+  //
+  stroke(black);
+  fill(resetWhite);
+  rect(selectPurpleButtonX, selectPurpleButtonY, selectPurpleButtonWidth, selectPurpleButtonHeight);
+  fill(purple);
+  ellipse(selectPurpleEllipseX, selectPurpleEllipseY, colorEllipseDiameter, colorEllipseDiameter);
+  fill(resetWhite);
+}
+//
+void selectPinkButton() {
+  selectPinkButtonX = selectYellowButtonX;
+  selectPinkButtonY = selectTurquoiseButtonY;
+  selectPinkButtonWidth = selectTurquoiseButtonWidth;
+  selectPinkButtonHeight = selectTurquoiseButtonHeight;
+  selectPinkEllipseX = selectYellowEllipseX;
+  selectPinkEllipseY = selectTurquoiseEllipseY;
+  //
+  stroke(black);
+  fill(resetWhite);
+  rect(selectPinkButtonX, selectPinkButtonY, selectPinkButtonWidth, selectPinkButtonHeight);
+  fill(pink);
+  ellipse(selectPinkEllipseX, selectPinkEllipseY, colorEllipseDiameter, colorEllipseDiameter);
+  fill(resetWhite);
+}
 //
 //
 //void sizeButton() {
