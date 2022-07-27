@@ -380,8 +380,19 @@ void sizeLButton() {
 }
 //
 void resetButton() {
-  resetButtonX = ;
-  resetButtonY = ;
-  resetButtonWidth = ;
-  resetButtonHeight = ;
+  resetButtonX = selectButtonX;
+  resetButtonY = selectButtonHeight*4;
+  resetButtonWidth = selectingSurfaceWidth/2;
+  resetButtonHeight = selectButtonHeight;
+  //
+  rect(resetButtonX, resetButtonY, resetButtonWidth, resetButtonHeight);
+}
+//
+void quitButton() {
+  quitButtonX = resetButtonWidth;
+  quitButtonY = resetButtonY;
+  quitButtonWidth = resetButtonWidth;
+  quitButtonHeight = resetButtonHeight;
+  //
+  rect(quitButtonX, quitButtonY, quitButtonWidth, quitButtonHeight);
 }

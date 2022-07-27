@@ -1,4 +1,4 @@
- void selectDrawButtons() {
+void selectDrawButtons() {
   if (mouseX>selectButtonX && mouseX<selectButtonX+selectButtonWidth && mouseY>selectButtonY && mouseY<selectButtonY+selectButtonHeight) {
     buttonFill = pink;
   } else {
@@ -26,4 +26,23 @@
   sizeButton();
   sizeText();
   fill(resetWhite);
- }
+  //
+  if (mouseX> resetButtonX && mouseX< resetButtonX+resetButtonWidth && mouseY> resetButtonY && mouseY< resetButtonY+resetButtonHeight) {
+    buttonFill = green;
+  } else {
+    buttonFill = red;
+  }//End Hover-over
+  fill(buttonFill); //2-colors to start , remember nightMode adds choice
+  resetButton();
+  resetText();
+  //
+  if (mouseX> quitButtonX && mouseX< quitButtonX+quitButtonWidth && mouseY> quitButtonY && mouseY< quitButtonY+quitButtonHeight) {
+    buttonFill = green;
+  } else {
+    buttonFill = red;
+  }//End Hover-over
+  fill(buttonFill); //2-colors to start , remember nightMode adds choice
+  quitButton();
+  quitText();
+  //
+}

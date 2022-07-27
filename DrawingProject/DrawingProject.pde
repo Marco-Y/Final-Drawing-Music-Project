@@ -452,7 +452,28 @@ void mousePressed()
     lSizeON=true;
   }
   //
-  if (mouseX> quitButtonX && mouseX< quitButtonX+quitButtonWidth && mouseY> quitButtonY && mouseY< quitButtonY+quitButtonHeight) exit();
+  if (mouseX> sizeSButtonX-sizeSButtonRadius && mouseX< sizeSButtonX+sizeSButtonRadius && mouseY> sizeSButtonY-sizeSButtonRadius && mouseY< sizeSButtonY+sizeSButtonRadius) {
+    soundEffect6.play();
+  } else {
+    soundEffect6.pause();
+    soundEffect6.rewind();
+  }
+  //
+  //Quit&Reset
+  //
+  if (mouseX> resetButtonX && mouseX< resetButtonX+resetButtonWidth && mouseY> resetButtonY && mouseY< resetButtonY+resetButtonHeight) {
+    soundEffect5.play();
+    fill(resetWhite);
+    rect( drawingSurfaceX, drawingSurfaceY, drawingSurfaceWidth, drawingSurfaceHeight );
+  } else {
+    soundEffect5.pause();
+    soundEffect5.rewind();
+  }
+  //
+  if (mouseX> quitButtonX && mouseX< quitButtonX+quitButtonWidth && mouseY> quitButtonY && mouseY< quitButtonY+quitButtonHeight) {
+    soundEffect5.play();
+    exit();
+  }
   //
 }//End mousePressed
 //
