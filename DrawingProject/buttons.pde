@@ -9,9 +9,12 @@ float selectCircleEllipseX, selectCircleEllipseY, selectCircleEllipseDiameter;
 float selectEraserButtonX, selectEraserButtonY, selectEraserButtonWidth, selectEraserButtonHeight;
 float selectEraserShapeX1, selectEraserShapeY1, selectEraserShapeWidth1, selectEraserShapeHeight1;
 float selectEraserShapeX2, selectEraserShapeY2, selectEraserShapeWidth2, selectEraserShapeHeight2;
+//
 float selectColorButtonX, selectColorButtonY, selectColorButtonWidth, selectColorButtonHeight;
+float colorEllipseDiameter;
 float selectGreyButtonX, selectGreyButtonY, selectGreyButtonWidth, selectGreyButtonHeight;
-float selectGreyEllipseX, selectGreyEllipseY, selectGreyEllipseDiameter;
+float selectGreyEllipseX, selectGreyEllipseY;
+//float selectGreyEllipseDiameter;
 float selectBlackButtonX, selectBlackButtonY, selectBlackButtonWidth, selectBlackButtonHeight;
 float selectBlackEllipseX, selectBlackEllipseY, selectBlackEllipseDiameter;
 float selectBrownButtonX, selectBrownButtonY, selectBrownButtonWidth, selectBrownButtonHeight;
@@ -26,6 +29,9 @@ float selectTurquoiseButtonX, selectTurquoiseButtonY, selectTurquoiseButtonWidth
 float selectTurquoiseEllipseX, selectTurquoiseEllipseY, selectTurquoiseEllipseDiameter;
 float selectCyanButtonX, selectCyanButtonY, selectCyanButtonWidth, selectCyanButtonHeight;
 float selectCyanEllipseX, selectCyanEllipseY, selectCyanEllipseDiameter;
+float selectBlueButtonX, selectBlueButtonY, selectBlueButtonWidth, selectBlueButtonHeight;
+float selectBlueEllipseX, selectBlueEllipseY, selectBlueEllipseDiameter;
+
 //
 //Select Pen/Circle Stamp/Eraser buttons
 //
@@ -116,13 +122,13 @@ void selectGreyButton() {
   selectGreyButtonHeight = selectColorButtonHeight*1/2;
   selectGreyEllipseX = selectColorButtonWidth+selectColorButtonWidth*1/4;
   selectGreyEllipseY = selectColorButtonY+selectColorButtonHeight*1/4;
-  selectGreyEllipseDiameter = selectColorButtonWidth*1/4;
+  colorEllipseDiameter = selectColorButtonWidth*1/4;
   //
   stroke(black);
   fill(resetWhite);
   rect(selectGreyButtonX, selectGreyButtonY, selectGreyButtonWidth, selectGreyButtonHeight);
   fill(defaultGrey);
-  ellipse(selectGreyEllipseX, selectGreyEllipseY, selectGreyEllipseDiameter, selectGreyEllipseDiameter);
+  ellipse(selectGreyEllipseX, selectGreyEllipseY, colorEllipseDiameter, colorEllipseDiameter);
   fill(resetWhite);
 }
 //
@@ -133,13 +139,13 @@ void selectBlackButton() {
   selectBlackButtonHeight = selectGreyButtonHeight;
   selectBlackEllipseX = selectColorButtonWidth+selectGreyButtonWidth*3/2;
   selectBlackEllipseY = selectGreyEllipseY;
-  selectBlackEllipseDiameter = selectGreyEllipseDiameter;
+  selectBlackEllipseDiameter = colorEllipseDiameter;
   //
   stroke(black);
   fill(resetWhite);
   rect(selectBlackButtonX, selectBlackButtonY, selectBlackButtonWidth, selectBlackButtonHeight);
   fill(black);
-  ellipse(selectBlackEllipseX, selectBlackEllipseY, selectBlackEllipseDiameter, selectBlackEllipseDiameter);
+  ellipse(selectBlackEllipseX, selectBlackEllipseY, colorEllipseDiameter, colorEllipseDiameter);
 }
 //
 void selectBrownButton() {
@@ -149,13 +155,13 @@ void selectBrownButton() {
   selectBrownButtonHeight = selectColorButtonHeight*1/2;
   selectBrownEllipseX = selectColorButtonWidth*2+selectColorButtonWidth*1/4;
   selectBrownEllipseY = selectColorButtonY+selectColorButtonHeight*1/4;
-  selectBrownEllipseDiameter = selectColorButtonWidth*1/4;
+  selectBrownEllipseDiameter = colorEllipseDiameter;
   //
   stroke(black);
   fill(resetWhite);
   rect(selectBrownButtonX, selectBrownButtonY, selectBrownButtonWidth, selectBrownButtonHeight);
   fill(brown);
-  ellipse(selectBrownEllipseX, selectBrownEllipseY, selectBrownEllipseDiameter, selectBrownEllipseDiameter);
+  ellipse(selectBrownEllipseX, selectBrownEllipseY, colorEllipseDiameter, colorEllipseDiameter);
   fill(resetWhite);
 }
 //
@@ -166,13 +172,13 @@ void selectRedButton() {
   selectRedButtonHeight = selectGreyButtonHeight;
   selectRedEllipseX = selectColorButtonWidth*2+selectGreyButtonWidth*3/2;
   selectRedEllipseY = selectGreyEllipseY;
-  selectRedEllipseDiameter = selectGreyEllipseDiameter;
+  selectRedEllipseDiameter = colorEllipseDiameter;
   //
   stroke(black);
   fill(resetWhite);
   rect(selectRedButtonX, selectRedButtonY, selectRedButtonWidth, selectRedButtonHeight);
   fill(red);
-  ellipse(selectRedEllipseX, selectRedEllipseY, selectRedEllipseDiameter, selectRedEllipseDiameter);
+  ellipse(selectRedEllipseX, selectRedEllipseY, colorEllipseDiameter, colorEllipseDiameter);
   fill(resetWhite);
 }
 //
@@ -183,13 +189,13 @@ void selectYellowButton() {
   selectYellowButtonHeight = selectGreyButtonHeight;
   selectYellowEllipseX = selectColorButtonWidth*3+selectColorButtonWidth*1/4;
   selectYellowEllipseY = selectGreyEllipseY;
-  selectYellowEllipseDiameter = selectGreyEllipseDiameter;
+  selectYellowEllipseDiameter = colorEllipseDiameter;
   //
   stroke(black);
   fill(resetWhite);
   rect(selectYellowButtonX, selectYellowButtonY, selectYellowButtonWidth, selectYellowButtonHeight);
   fill(yellow);
-  ellipse(selectYellowEllipseX, selectYellowEllipseY, selectYellowEllipseDiameter, selectYellowEllipseDiameter);
+  ellipse(selectYellowEllipseX, selectYellowEllipseY, colorEllipseDiameter, colorEllipseDiameter);
   fill(resetWhite);
 }
 //
@@ -200,30 +206,30 @@ void selectGreenButton() {
   selectGreenButtonHeight = selectGreyButtonHeight;
   selectGreenEllipseX = selectColorButtonWidth*3+selectGreyButtonWidth*3/2;
   selectGreenEllipseY = selectGreyEllipseY;
-  selectGreenEllipseDiameter = selectGreyEllipseDiameter;
+  selectGreenEllipseDiameter = colorEllipseDiameter;
   //
   stroke(black);
   fill(resetWhite);
   rect(selectGreenButtonX, selectGreenButtonY, selectGreenButtonWidth, selectGreenButtonHeight);
   fill(green);
-  ellipse(selectGreenEllipseX, selectGreenEllipseY, selectGreenEllipseDiameter, selectRedEllipseDiameter);
+  ellipse(selectGreenEllipseX, selectGreenEllipseY, colorEllipseDiameter, colorEllipseDiameter);
   fill(resetWhite);
 }
 //
 void selectTurquoiseButton() {
-  selectTurquoiseButtonX = selectColorButtonWidth;
+  selectTurquoiseButtonX = selectGreyButtonX;
   selectTurquoiseButtonY = selectColorButtonY+selectColorButtonHeight*1/2;
   selectTurquoiseButtonWidth = selectColorButtonWidth*1/2;
   selectTurquoiseButtonHeight = selectColorButtonHeight*1/2;
   selectTurquoiseEllipseX = selectColorButtonWidth+selectColorButtonWidth*1/4;
   selectTurquoiseEllipseY = selectColorButtonY+selectColorButtonHeight*3/4;
-  selectTurquoiseEllipseDiameter = selectColorButtonWidth*1/4;
+  selectTurquoiseEllipseDiameter = colorEllipseDiameter;
   //
   stroke(black);
   fill(resetWhite);
   rect(selectTurquoiseButtonX, selectTurquoiseButtonY, selectTurquoiseButtonWidth, selectTurquoiseButtonHeight);
   fill(turquoise);
-  ellipse(selectTurquoiseEllipseX, selectTurquoiseEllipseY, selectTurquoiseEllipseDiameter, selectTurquoiseEllipseDiameter);
+  ellipse(selectTurquoiseEllipseX, selectTurquoiseEllipseY, colorEllipseDiameter, colorEllipseDiameter);
   fill(resetWhite);
 }
 //
@@ -234,17 +240,25 @@ void selectCyanButton() {
   selectCyanButtonHeight = selectTurquoiseButtonHeight;
   selectCyanEllipseX = selectColorButtonWidth+selectTurquoiseButtonWidth*3/2;
   selectCyanEllipseY = selectTurquoiseEllipseY;
-  selectCyanEllipseDiameter = selectTurquoiseEllipseDiameter;
+  selectCyanEllipseDiameter = colorEllipseDiameter;
   //
   stroke(black);
   fill(resetWhite);
   rect(selectCyanButtonX, selectCyanButtonY, selectCyanButtonWidth, selectCyanButtonHeight);
   fill(cyan);
-  ellipse(selectCyanEllipseX, selectCyanEllipseY, selectCyanEllipseDiameter, selectCyanEllipseDiameter);
+  ellipse(selectCyanEllipseX, selectCyanEllipseY, colorEllipseDiameter, colorEllipseDiameter);
   fill(resetWhite);
 }
 //
-void selectBlueButton
+void selectBlueButton() {
+  selectBlueButtonX = selectBrownButtonX;
+  selectBlueButtonY = selectTurquoiseButtonY;
+  selectBlueButtonWidth = selectTurquoiseButtonWidth;
+  selectBlueButtonHeight = selectTurquoiseButtonHeight;
+  selectBlueEllipseX = selectBrownEllipseX;
+  selectBlueEllipseY = selectTurquoiseEllipseY;
+  selectBlueEllipseDiameter = selectTurquoiseEllipseDiameter;
+}
 //
 //
 //
