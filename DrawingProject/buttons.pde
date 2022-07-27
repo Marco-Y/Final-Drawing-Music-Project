@@ -43,6 +43,11 @@ float sizeSButtonX, sizeSButtonY, sizeSButtonDiameter, sizeSButtonRadius;
 float sizeMButtonX, sizeMButtonY, sizeMButtonDiameter, sizeMButtonRadius;
 float sizeLButtonX, sizeLButtonY, sizeLButtonDiameter, sizeLButtonRadius;
 //
+//Reset/Quit Button
+//
+float resetButtonX, resetButtonY, resetButtonWidth, resetButtonHeight;
+float quitButtonX, quitButtonY, quitButtonWidth, quitButtonHeight;
+//
 void selectButton() {
   selectButtonX = width*0;
   selectButtonY = height*0;
@@ -372,4 +377,11 @@ void sizeLButton() {
   stroke(black);
   strokeWeight(1);
   ellipse(sizeLButtonX, sizeLButtonY, sizeLButtonDiameter, sizeLButtonDiameter);
+}
+//
+void resetButton() {
+  resetButtonX = ;
+  resetButtonY = ;
+  resetButtonWidth = ;
+  resetButtonHeight = ;
 }

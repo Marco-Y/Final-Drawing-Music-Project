@@ -7,7 +7,7 @@ import ddf.minim.ugens.*;
 
 //Global Variables
 Minim minim;
-AudioPlayer soundEffect1, soundEffect2, soundEffect3, soundEffect4, soundEffect5;
+AudioPlayer soundEffect1, soundEffect2, soundEffect3, soundEffect4, soundEffect5, soundEffect6, soundEffect7;
 Boolean draw=false;
 Boolean selectButtonON=false, selectPenButtonON=false, selectCircleButtonON=false, selectEraserButtonON=false;
 Boolean selectColorButtonON=false;
@@ -27,6 +27,8 @@ void setup()
   soundEffect3 = minim.loadFile("Dry Off with Towel.mp3"); //Eraser Sound
   soundEffect4 = minim.loadFile("Pen Clicking .mp3"); //Pen Select Sound
   soundEffect5 = minim.loadFile("Swoosh.mp3"); //Color Select Sound
+  soundEffect6 = minim.loadFile("Winding Alarm Clock.mp3"); //Size Select Sound
+  soundEffect7 = minim.loadFile("Pen Writing .mp3"); //Pen Writing Sound
   //
   println ("width:", width, "\t height:", height, "\t displayWidth:", displayWidth, "\t\t displayHeight:", displayHeight);
   int appWidth = width;
@@ -215,7 +217,7 @@ void mousePressed()
   } //End selectPenButtonON
   //
   if ( mouseX>selectCircleButtonX && mouseX<selectCircleButtonX+selectCircleButtonWidth && mouseY>selectCircleButtonY && mouseY<selectCircleButtonY+selectCircleButtonHeight ) {
-    soundEffect2.loop();
+    soundEffect2.play();
     selectPenButtonON = false;
     selectCircleButtonON = true;
     selectEraserButtonON = false;
@@ -449,6 +451,8 @@ void mousePressed()
     mSizeON=false;
     lSizeON=true;
   }
+  //
+  if (mouseX> quitButtonX && mouseX< quitButtonX+quitButtonWidth && mouseY> quitButtonY && mouseY< quitButtonY+quitButtonHeight) exit();
   //
 }//End mousePressed
 //
