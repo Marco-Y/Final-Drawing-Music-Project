@@ -39,7 +39,7 @@ float selectOrangeEllipseX, selectOrangeEllipseY;
 //Size Buttons
 //
 float sizeButtonX, sizeButtonY, sizeButtonWidth, sizeButtonHeight;
-float sizeXSButtonX, sizeXSButtonY, sizeXSButtonDiameter;
+float sizeSButtonX, sizeSButtonY, sizeSButtonDiameter;
 //
 void selectButton() {
   selectButtonX = width*0;
@@ -339,12 +339,14 @@ void sizeButton() {
   rect(sizeButtonX, sizeButtonY, sizeButtonWidth, sizeButtonHeight);
 }
 //
-void sizeXSButton() {
-  sizeXSButtonX = selectButtonWidth*3/2;
-  sizeXSButtonY = sizeButtonY+selectButtonHeight*1/2;
-  sizeXSButtonDiameter = width*1/100;
+void sizeSButton() {
+  sizeSButtonX = selectButtonWidth*3/2;
+  sizeSButtonY = sizeButtonY+selectButtonHeight*1/2;
+  sizeSButtonDiameter = width*1/100;
   //
   strokeWeight(1);
-  ellipse(sizeXSButtonX, sizeXSButtonY, sizeXSButtonDiameter, sizeXSButtonDiameter);
+  ellipse(sizeSButtonX, sizeSButtonY, sizeSButtonDiameter, sizeSButtonDiameter);
 }
+//
+//void sizeM
   

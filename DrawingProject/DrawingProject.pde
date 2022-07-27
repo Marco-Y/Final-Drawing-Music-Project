@@ -13,7 +13,7 @@ Boolean selectButtonON=false, selectPenButtonON=false, selectCircleButtonON=fals
 Boolean selectColorButtonON=false;
 Boolean selectGreyButtonON=false, selectBlackButtonON=false, selectBrownButtonON=false, selectRedButtonON=false, selectYellowButtonON=false, selectGreenButtonON=false;
 Boolean selectTurquoiseButtonON=false, selectCyanButtonON=false, selectBlueButtonON=false, selectPurpleButtonON=false, selectPinkButtonON=false, selectOrangeButtonON=false;
-Boolean sizeButtonON=false, xsSizeON=false, sSizeON=false, mSizeON=false, lSizeON=false;
+Boolean sizeButtonON=false, sSizeON=false, mSizeON=false, lSizeON=false;
 //
 void setup()
 {
@@ -232,23 +232,18 @@ void draw()
   //
   //Size Buttons
   //
-  if ( sizeButtonON=true && mouseX>sizeButtonX && mouseX<sizeButtonX+sizeButtonWidth && mouseY>sizeButtonY && mouseY<sizeButtonY+sizeButtonHeight ) {
+  if ( sizeButtonON==true && mouseX>sizeButtonX && mouseX<sizeButtonX+sizeButtonWidth && mouseY>sizeButtonY && mouseY<sizeButtonY+sizeButtonHeight ) {
     sizeXSButton();
   }
   //
-  if ( mouseX>sizeXSButtonX-sizeXSButtonDiameter/2 && mouseX<sizeXSButtonX+sizeXSButtonDiameter/2 && mouseY>sizeXSButtonY-sizeXSButtonDiameter/2 && mouseY<sizeXSButtonY+sizeXSButtonDiameter/2 ) {
-    xsSizeON=true;
-    sSizeON=false;
-    mSizeON=false;
-    lSizeON=false;
-  }
-  if ( selectPenButtonON==true && xsSizeON==true && draw == true && mouseX>drawingSurfaceX && mouseX<drawingSurfaceX+drawingSurfaceWidth && mouseY>drawingSurfaceY && mouseY<drawingSurfaceY+drawingSurfaceHeight ) {
+  if ( selectPenButtonON==true && sSizeON==true && draw == true && mouseX>drawingSurfaceX && mouseX<drawingSurfaceX+drawingSurfaceWidth && mouseY>drawingSurfaceY && mouseY<drawingSurfaceY+drawingSurfaceHeight ) {
     strokeWeight(1);
     line (mouseX, mouseY, pmouseX, pmouseY);
   }
   //
-  if ( selectCircleButtonON==true && xsSizeON==true && draw == true && mouseX>drawingSurfaceX && mouseX<drawingSurfaceX+drawingSurfaceWidth && mouseY>drawingSurfaceY && mouseY<drawingSurfaceY+drawingSurfaceHeight ) {
-    strokeWeight(sizeXSButtonDiameter);
+  if ( selectCircleButtonON==true && sSizeON==true && draw == true && mouseX>drawingSurfaceX && mouseX<drawingSurfaceX+drawingSurfaceWidth && mouseY>drawingSurfaceY && mouseY<drawingSurfaceY+drawingSurfaceHeight ) {
+    //strokeWeight(sizeSButtonDiameter);
+    strokeWeight(1);
     ellipse( mouseX, mouseY, drawingDiameter, drawingDiameter);
   }
   //
@@ -499,6 +494,11 @@ void mousePressed()
     sizeButtonON=true;
   }
   //
+  if ( mouseX>sizeSButtonX-sizeSButtonDiameter/2 && mouseX<sizeSButtonX+sizeSButtonDiameter/2 && mouseY>sizeSButtonY-sizeSButtonDiameter/2 && mouseY<sizeSButtonY+sizeSButtonDiameter/2 ) {
+    sSizeON=true;
+    mSizeON=false;
+    lSizeON=false;
+  }
 }//End mousePressed
 //
 //End MAIN Program
