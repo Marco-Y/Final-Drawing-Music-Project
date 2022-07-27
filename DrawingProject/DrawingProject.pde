@@ -148,7 +148,7 @@ void draw()
   }
   //
   if ( selectCircleButtonON==true && sSizeON==true && draw == true && mouseX>drawingSurfaceX && mouseX<drawingSurfaceX+drawingSurfaceWidth && mouseY>drawingSurfaceY && mouseY<drawingSurfaceY+drawingSurfaceHeight ) {
-    strokeWeight(sizeSButtonDiameter);
+    selectColorIfStatements();
     ellipse( mouseX, mouseY, drawingDiameter, drawingDiameter);
   }
   //
@@ -205,7 +205,6 @@ void mousePressed()
     soundEffect3.pause();
     soundEffect3.rewind();
   }
-  //
   //
   //Color
   //
