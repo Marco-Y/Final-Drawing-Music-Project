@@ -128,19 +128,16 @@ void draw()
     selectPinkButton();
     selectOrangeButton();
   }
-  /*
-  if (mousePressed==true) {
-   if ( mouseX>selectGreyButtonX && mouseX<selectGreyButtonX+selectGreyButtonWidth*6 && mouseY>selectGreyButtonY && mouseY<selectGreyButtonY+selectGreyButtonHeight*2) {
-   soundEffect5.play();
-   }
-   }
-   */
   //
   //Size Buttons
   //
   if ( sizeButtonON==true && mouseX>sizeButtonX && mouseX<sizeButtonX+sizeButtonWidth && mouseY>sizeButtonY && mouseY<sizeButtonY+sizeButtonHeight ) {
     sizeSButton();
+    sizeMButton();
+    sizeLButton();
   }
+  //
+  //S Size
   //
   if ( selectPenButtonON==true && sSizeON==true && draw == true && mouseX>drawingSurfaceX && mouseX<drawingSurfaceX+drawingSurfaceWidth && mouseY>drawingSurfaceY && mouseY<drawingSurfaceY+drawingSurfaceHeight ) {
     strokeWeight(1);
@@ -149,7 +146,46 @@ void draw()
   //
   if ( selectCircleButtonON==true && sSizeON==true && draw == true && mouseX>drawingSurfaceX && mouseX<drawingSurfaceX+drawingSurfaceWidth && mouseY>drawingSurfaceY && mouseY<drawingSurfaceY+drawingSurfaceHeight ) {
     selectColorIfStatements();
-    ellipse( mouseX, mouseY, drawingDiameter, drawingDiameter);
+    ellipse( mouseX, mouseY, sizeSButtonDiameter, drawingDiameter);
+  }
+  //
+  if ( selectEraserButtonON==true && sSizeON==true && draw == true && mouseX>drawingSurfaceX && mouseX<drawingSurfaceX+drawingSurfaceWidth && mouseY>drawingSurfaceY && mouseY<drawingSurfaceY+drawingSurfaceHeight ) {
+    fill(resetWhite);
+    ellipse( mouseX, mouseY, sizeSButtonDiameter, sizeSButtonDiameter);
+  }
+  //
+  //M Size
+  //
+  if ( selectPenButtonON==true && mSizeON==true && draw == true && mouseX>drawingSurfaceX && mouseX<drawingSurfaceX+drawingSurfaceWidth && mouseY>drawingSurfaceY && mouseY<drawingSurfaceY+drawingSurfaceHeight ) {
+    strokeWeight(5);
+    line (mouseX, mouseY, pmouseX, pmouseY);
+  }
+  //
+  if ( selectCircleButtonON==true && mSizeON==true && draw == true && mouseX>drawingSurfaceX && mouseX<drawingSurfaceX+drawingSurfaceWidth && mouseY>drawingSurfaceY && mouseY<drawingSurfaceY+drawingSurfaceHeight ) {
+    selectColorIfStatements();
+    ellipse( mouseX, mouseY, sizeMButtonDiameter, sizeMButtonDiameter);
+  }
+  //
+  if ( selectEraserButtonON==true && mSizeON==true && draw == true && mouseX>drawingSurfaceX && mouseX<drawingSurfaceX+drawingSurfaceWidth && mouseY>drawingSurfaceY && mouseY<drawingSurfaceY+drawingSurfaceHeight ) {
+    fill(resetWhite);
+    ellipse( mouseX, mouseY, sizeMButtonDiameter, sizeMButtonDiameter);
+  }
+  //
+  //L Size
+  //
+  if ( selectPenButtonON==true && lSizeON==true && draw == true && mouseX>drawingSurfaceX && mouseX<drawingSurfaceX+drawingSurfaceWidth && mouseY>drawingSurfaceY && mouseY<drawingSurfaceY+drawingSurfaceHeight ) {
+    strokeWeight(10);
+    line (mouseX, mouseY, pmouseX, pmouseY);
+  }
+  //
+  if ( selectCircleButtonON==true && lSizeON==true && draw == true && mouseX>drawingSurfaceX && mouseX<drawingSurfaceX+drawingSurfaceWidth && mouseY>drawingSurfaceY && mouseY<drawingSurfaceY+drawingSurfaceHeight ) {
+    selectColorIfStatements();
+    ellipse( mouseX, mouseY, sizeLButtonDiameter, sizeLButtonDiameter);
+  }
+  //
+  if ( selectEraserButtonON==true && lSizeON==true && draw == true && mouseX>drawingSurfaceX && mouseX<drawingSurfaceX+drawingSurfaceWidth && mouseY>drawingSurfaceY && mouseY<drawingSurfaceY+drawingSurfaceHeight ) {
+    fill(resetWhite);
+    ellipse( mouseX, mouseY, sizeLButtonDiameter, sizeLButtonDiameter);
   }
   //
 }//End draw
@@ -396,11 +432,24 @@ void mousePressed()
     sizeButtonON=true;
   }
   //
-  if ( mouseX>sizeSButtonX-sizeSButtonDiameter/2 && mouseX<sizeSButtonX+sizeSButtonDiameter/2 && mouseY>sizeSButtonY-sizeSButtonDiameter/2 && mouseY<sizeSButtonY+sizeSButtonDiameter/2 ) {
+  if ( mouseX>sizeSButtonX-sizeSButtonRadius && mouseX<sizeSButtonX+sizeSButtonRadius && mouseY>sizeSButtonY-sizeSButtonRadius && mouseY<sizeSButtonY+sizeSButtonRadius ) {
     sSizeON=true;
     mSizeON=false;
     lSizeON=false;
   }
+  //
+  if ( mouseX>sizeMButtonX-sizeMButtonRadius && mouseX<sizeMButtonX+sizeMButtonRadius && mouseY>sizeMButtonY-sizeMButtonRadius && mouseY<sizeMButtonY+sizeMButtonRadius ) {
+    sSizeON=false;
+    mSizeON=true;
+    lSizeON=false;
+  }
+  //
+  if ( mouseX>sizeLButtonX-sizeLButtonRadius && mouseX<sizeLButtonX+sizeLButtonRadius && mouseY>sizeLButtonY-sizeLButtonRadius && mouseY<sizeLButtonY+sizeLButtonRadius ) {
+    sSizeON=false;
+    mSizeON=false;
+    lSizeON=true;
+  }
+  //
 }//End mousePressed
 //
 //End MAIN Program

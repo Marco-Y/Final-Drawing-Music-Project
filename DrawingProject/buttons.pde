@@ -39,7 +39,9 @@ float selectOrangeEllipseX, selectOrangeEllipseY;
 //Size Buttons
 //
 float sizeButtonX, sizeButtonY, sizeButtonWidth, sizeButtonHeight;
-float sizeSButtonX, sizeSButtonY, sizeSButtonDiameter;
+float sizeSButtonX, sizeSButtonY, sizeSButtonDiameter, sizeSButtonRadius;
+float sizeMButtonX, sizeMButtonY, sizeMButtonDiameter, sizeMButtonRadius;
+float sizeLButtonX, sizeLButtonY, sizeLButtonDiameter, sizeLButtonRadius;
 //
 void selectButton() {
   selectButtonX = width*0;
@@ -343,10 +345,31 @@ void sizeSButton() {
   sizeSButtonX = selectButtonWidth*3/2;
   sizeSButtonY = sizeButtonY+selectButtonHeight*1/2;
   sizeSButtonDiameter = width*1/100;
+  sizeSButtonRadius = sizeSButtonDiameter/2;
   //
+  stroke(black);
   strokeWeight(1);
   ellipse(sizeSButtonX, sizeSButtonY, sizeSButtonDiameter, sizeSButtonDiameter);
 }
 //
-//void sizeM
-  
+void sizeMButton() {
+  sizeMButtonX = selectButtonWidth*5/2;
+  sizeMButtonY = sizeSButtonY;
+  sizeMButtonDiameter = width*1/50;
+  sizeMButtonRadius = sizeMButtonDiameter/2;
+  //
+  stroke(black);
+  strokeWeight(1);
+  ellipse(sizeMButtonX, sizeMButtonY, sizeMButtonDiameter, sizeMButtonDiameter);
+}
+//
+void sizeLButton() {
+  sizeLButtonX = selectButtonWidth*15/4;
+  sizeLButtonY = sizeSButtonY;
+  sizeLButtonDiameter = width*1/25;
+  sizeLButtonRadius = sizeLButtonDiameter/2;
+  //
+  stroke(black);
+  strokeWeight(1);
+  ellipse(sizeLButtonX, sizeLButtonY, sizeLButtonDiameter, sizeLButtonDiameter);
+}
