@@ -6,6 +6,10 @@ import ddf.minim.spi.*;
 import ddf.minim.ugens.*;
 
 //Global Variables
+Minim minim;
+AudioPlayer boingSoundEffect;
+AudioMetaData boingSoundEffectMetaData;
+AudioPlayer circleStampSoundEffect;
 Boolean draw=false;
 Boolean selectButtonON=false, selectPenButtonON=false, selectCircleButtonON=false, selectEraserButtonON=false;
 Boolean selectColorButtonON=false;
@@ -19,11 +23,16 @@ void setup()
   //Display Orientation Checker
   //Display and CANVAS Checker
   size(1200, 750); //Landscape (Portrait or Square)
+  minim = new Minim(this);
+  boingSoundEffect = minim.loadFile("Cartoon Boing.mp3");
+  circleStampSoundEffect = minim.loadFile("Wooden Bat Tapping Home Plate.mp3");
+  boingSoundEffectMetaData = boingSoundEffect.getMetaData();
   println ("width:", width, "\t height:", height, "\t displayWidth:", displayWidth, "\t\t displayHeight:", displayHeight);
   int appWidth = width;
   int appHeight = height;
   if ( width > displayWidth || height > displayHeight ) {
     //CANVAS is too Big
+    boingSoundEffect.play();
     appWidth = displayWidth;
     appHeight = displayHeight;
     println("CANVAS needs to be readjusted to your monitor");
@@ -37,6 +46,7 @@ void setup()
   if ( orientation==ls ) { //Test for chosen display orientation
     println("Display Orientation is good to go");
   } else {
+    boingSoundEffect.play();
     appWidth *= 0; //assignment operator , works like appWidth = appWidth*0
     appHeight *= 0;
     println(instruct);
@@ -365,7 +375,7 @@ void mousePressed()
     selectOrangeButtonON=false;
   }
   //
-    if ( mouseX>selectOrangeButtonX && mouseX<selectOrangeButtonX+selectOrangeButtonWidth && mouseY>selectOrangeButtonY && mouseY<selectOrangeButtonY+selectOrangeButtonHeight ) {
+  if ( mouseX>selectOrangeButtonX && mouseX<selectOrangeButtonX+selectOrangeButtonWidth && mouseY>selectOrangeButtonY && mouseY<selectOrangeButtonY+selectOrangeButtonHeight ) {
     selectGreyButtonON=false;
     selectBlackButtonON=false;
     selectBrownButtonON=false;
