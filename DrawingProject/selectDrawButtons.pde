@@ -25,4 +25,5 @@
   fill(buttonFill);
   sizeButton();
   sizeText();
+  fill(resetWhite);
  }

@@ -67,6 +67,7 @@ void selectPenButton() {
   penTipY3 = penRectY;
   //
   stroke(black);
+  fill(resetWhite);
   rect(selectPenButtonX, selectPenButtonY, selectPenButtonWidth, selectPenButtonHeight);
   fill(defaultGrey);
   rect(penRectX, penRectY, penRectWidth, penRectHeight);
