@@ -225,6 +225,22 @@ void selectTurquoiseButton() {
   fill(resetWhite);
 }
 //
+void selectCyanButton() {
+  selectCyanButtonX = selectColorButtonWidth;
+  selectCyanButtonY = selectColorButtonY+selectColorButtonHeight*1/2;
+  selectCyanButtonWidth = selectColorButtonWidth*1/2;
+  selectCyanButtonHeight = selectColorButtonHeight*1/2;
+  selectCyanEllipseX = selectColorButtonWidth+selectColorButtonWidth*1/4;
+  selectCyanEllipseY = selectColorButtonY+selectColorButtonHeight*3/4;
+  selectCyanEllipseDiameter = selectColorButtonWidth*1/4;
+  //
+  stroke(black);
+  fill(resetWhite);
+  rect(selectTurquoiseButtonX, selectTurquoiseButtonY, selectTurquoiseButtonWidth, selectTurquoiseButtonHeight);
+  fill(turquoise);
+  ellipse(selectTurquoiseEllipseX, selectTurquoiseEllipseY, selectTurquoiseEllipseDiameter, selectTurquoiseEllipseDiameter);
+  fill(resetWhite);
+}
 //
 //
 //
