@@ -78,54 +78,7 @@ void draw()
   //Select Pen Button
   //
   if ( selectPenButtonON==true && draw == true && mouseX>drawingSurfaceX && mouseX<drawingSurfaceX+drawingSurfaceWidth && mouseY>drawingSurfaceY && mouseY<drawingSurfaceY+drawingSurfaceHeight) {
-    if ( selectGreyButtonON==true && draw == true && mouseX>drawingSurfaceX && mouseX<drawingSurfaceX+drawingSurfaceWidth && mouseY>drawingSurfaceY && mouseY<drawingSurfaceY+drawingSurfaceHeight) {
-      stroke(defaultGrey);
-      fill(defaultGrey);
-    }
-    if ( selectBlackButtonON==true && draw == true && mouseX>drawingSurfaceX && mouseX<drawingSurfaceX+drawingSurfaceWidth && mouseY>drawingSurfaceY && mouseY<drawingSurfaceY+drawingSurfaceHeight) {
-      stroke(black);
-      fill(black);
-    }
-    if ( selectBrownButtonON==true && draw == true && mouseX>drawingSurfaceX && mouseX<drawingSurfaceX+drawingSurfaceWidth && mouseY>drawingSurfaceY && mouseY<drawingSurfaceY+drawingSurfaceHeight) {
-      stroke(brown);
-      fill(brown);
-    }
-    if ( selectRedButtonON==true && draw == true && mouseX>drawingSurfaceX && mouseX<drawingSurfaceX+drawingSurfaceWidth && mouseY>drawingSurfaceY && mouseY<drawingSurfaceY+drawingSurfaceHeight) {
-      stroke(red);
-      fill(red);
-    }
-    if ( selectYellowButtonON==true && draw == true && mouseX>drawingSurfaceX && mouseX<drawingSurfaceX+drawingSurfaceWidth && mouseY>drawingSurfaceY && mouseY<drawingSurfaceY+drawingSurfaceHeight) {
-      stroke(yellow);
-      fill(yellow);
-    }
-    if ( selectGreenButtonON==true && draw == true && mouseX>drawingSurfaceX && mouseX<drawingSurfaceX+drawingSurfaceWidth && mouseY>drawingSurfaceY && mouseY<drawingSurfaceY+drawingSurfaceHeight) {
-      stroke(green);
-      fill(green);
-    }
-    if ( selectTurquoiseButtonON==true && draw == true && mouseX>drawingSurfaceX && mouseX<drawingSurfaceX+drawingSurfaceWidth && mouseY>drawingSurfaceY && mouseY<drawingSurfaceY+drawingSurfaceHeight) {
-      stroke(turquoise);
-      fill(turquoise);
-    }
-    if ( selectCyanButtonON==true && draw == true && mouseX>drawingSurfaceX && mouseX<drawingSurfaceX+drawingSurfaceWidth && mouseY>drawingSurfaceY && mouseY<drawingSurfaceY+drawingSurfaceHeight) {
-      stroke(cyan);
-      fill(cyan);
-    }
-    if ( selectBlueButtonON==true && draw == true && mouseX>drawingSurfaceX && mouseX<drawingSurfaceX+drawingSurfaceWidth && mouseY>drawingSurfaceY && mouseY<drawingSurfaceY+drawingSurfaceHeight) {
-      stroke(blue);
-      fill(blue);
-    }
-    if ( selectPurpleButtonON==true && draw == true && mouseX>drawingSurfaceX && mouseX<drawingSurfaceX+drawingSurfaceWidth && mouseY>drawingSurfaceY && mouseY<drawingSurfaceY+drawingSurfaceHeight) {
-      stroke(purple);
-      fill(purple);
-    }
-    if ( selectPinkButtonON==true && draw == true && mouseX>drawingSurfaceX && mouseX<drawingSurfaceX+drawingSurfaceWidth && mouseY>drawingSurfaceY && mouseY<drawingSurfaceY+drawingSurfaceHeight) {
-      stroke(pink);
-      fill(pink);
-    }
-    if ( selectOrangeButtonON==true && draw == true && mouseX>drawingSurfaceX && mouseX<drawingSurfaceX+drawingSurfaceWidth && mouseY>drawingSurfaceY && mouseY<drawingSurfaceY+drawingSurfaceHeight) {
-      stroke(orange);
-      fill(orange);
-    }
+    selectColorIfStatements();
     line (mouseX, mouseY, pmouseX, pmouseY); //Pen drawing tool
     fill(defaultGrey);
     strokeWeight(1);
@@ -137,54 +90,7 @@ void draw()
   //Select Circle Button
   //
   if ( selectCircleButtonON==true && draw == true && mouseX>drawingSurfaceX && mouseX<drawingSurfaceX+drawingSurfaceWidth && mouseY>drawingSurfaceY && mouseY<drawingSurfaceY+drawingSurfaceHeight) {
-    if ( selectGreyButtonON==true && draw == true && mouseX>drawingSurfaceX && mouseX<drawingSurfaceX+drawingSurfaceWidth && mouseY>drawingSurfaceY && mouseY<drawingSurfaceY+drawingSurfaceHeight) {
-      stroke(defaultGrey);
-      fill(defaultGrey);
-    }
-    if ( selectBlackButtonON==true && draw == true && mouseX>drawingSurfaceX && mouseX<drawingSurfaceX+drawingSurfaceWidth && mouseY>drawingSurfaceY && mouseY<drawingSurfaceY+drawingSurfaceHeight) {
-      stroke(black);
-      fill(black);
-    }
-    if ( selectBrownButtonON==true && draw == true && mouseX>drawingSurfaceX && mouseX<drawingSurfaceX+drawingSurfaceWidth && mouseY>drawingSurfaceY && mouseY<drawingSurfaceY+drawingSurfaceHeight) {
-      stroke(brown);
-      fill(brown);
-    }
-    if ( selectRedButtonON==true && draw == true && mouseX>drawingSurfaceX && mouseX<drawingSurfaceX+drawingSurfaceWidth && mouseY>drawingSurfaceY && mouseY<drawingSurfaceY+drawingSurfaceHeight) {
-      stroke(red);
-      fill(red);
-    }
-    if ( selectYellowButtonON==true && draw == true && mouseX>drawingSurfaceX && mouseX<drawingSurfaceX+drawingSurfaceWidth && mouseY>drawingSurfaceY && mouseY<drawingSurfaceY+drawingSurfaceHeight) {
-      stroke(yellow);
-      fill(yellow);
-    }
-    if ( selectGreenButtonON==true && draw == true && mouseX>drawingSurfaceX && mouseX<drawingSurfaceX+drawingSurfaceWidth && mouseY>drawingSurfaceY && mouseY<drawingSurfaceY+drawingSurfaceHeight) {
-      stroke(green);
-      fill(green);
-    }
-    if ( selectTurquoiseButtonON==true && draw == true && mouseX>drawingSurfaceX && mouseX<drawingSurfaceX+drawingSurfaceWidth && mouseY>drawingSurfaceY && mouseY<drawingSurfaceY+drawingSurfaceHeight) {
-      stroke(turquoise);
-      fill(turquoise);
-    }
-    if ( selectCyanButtonON==true && draw == true && mouseX>drawingSurfaceX && mouseX<drawingSurfaceX+drawingSurfaceWidth && mouseY>drawingSurfaceY && mouseY<drawingSurfaceY+drawingSurfaceHeight) {
-      stroke(cyan);
-      fill(cyan);
-    }
-    if ( selectBlueButtonON==true && draw == true && mouseX>drawingSurfaceX && mouseX<drawingSurfaceX+drawingSurfaceWidth && mouseY>drawingSurfaceY && mouseY<drawingSurfaceY+drawingSurfaceHeight) {
-      stroke(blue);
-      fill(blue);
-    }
-    if ( selectPurpleButtonON==true && draw == true && mouseX>drawingSurfaceX && mouseX<drawingSurfaceX+drawingSurfaceWidth && mouseY>drawingSurfaceY && mouseY<drawingSurfaceY+drawingSurfaceHeight) {
-      stroke(purple);
-      fill(purple);
-    }
-    if ( selectPinkButtonON==true && draw == true && mouseX>drawingSurfaceX && mouseX<drawingSurfaceX+drawingSurfaceWidth && mouseY>drawingSurfaceY && mouseY<drawingSurfaceY+drawingSurfaceHeight) {
-      stroke(pink);
-      fill(pink);
-    }
-    if ( selectOrangeButtonON==true && draw == true && mouseX>drawingSurfaceX && mouseX<drawingSurfaceX+drawingSurfaceWidth && mouseY>drawingSurfaceY && mouseY<drawingSurfaceY+drawingSurfaceHeight) {
-      stroke(orange);
-      fill(orange);
-    }
+    selectColorIfStatements();
     ellipse( mouseX, mouseY, drawingDiameter, drawingDiameter); //Circle Drawing Tool
     fill(defaultGrey);
     strokeWeight(1);
@@ -242,8 +148,7 @@ void draw()
   }
   //
   if ( selectCircleButtonON==true && sSizeON==true && draw == true && mouseX>drawingSurfaceX && mouseX<drawingSurfaceX+drawingSurfaceWidth && mouseY>drawingSurfaceY && mouseY<drawingSurfaceY+drawingSurfaceHeight ) {
-    //strokeWeight(sizeSButtonDiameter);
-    strokeWeight(1);
+    strokeWeight(sizeSButtonDiameter);
     ellipse( mouseX, mouseY, drawingDiameter, drawingDiameter);
   }
   //
@@ -282,7 +187,6 @@ void mousePressed()
   //
   if ( selectCircleButtonON==true && draw == true && mouseX>drawingSurfaceX && mouseX<drawingSurfaceX+drawingSurfaceWidth && mouseY>drawingSurfaceY && mouseY<drawingSurfaceY+drawingSurfaceHeight) {
     soundEffect2.loop();
-    println("Song Length:", soundEffect2.length());
   } else {
     soundEffect2.pause();
     soundEffect2.rewind();
@@ -297,7 +201,6 @@ void mousePressed()
   //
   if ( selectEraserButtonON==true && draw == true && mouseX>drawingSurfaceX && mouseX<drawingSurfaceX+drawingSurfaceWidth && mouseY>drawingSurfaceY && mouseY<drawingSurfaceY+drawingSurfaceHeight) {
     soundEffect3.loop();
-    println("Song Length:", soundEffect3.length() );
   } else {
     soundEffect3.pause();
     soundEffect3.rewind();
