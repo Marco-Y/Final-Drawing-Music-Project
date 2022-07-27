@@ -13,6 +13,7 @@ Boolean selectButtonON=false, selectPenButtonON=false, selectCircleButtonON=fals
 Boolean selectColorButtonON=false;
 Boolean selectGreyButtonON=false, selectBlackButtonON=false, selectBrownButtonON=false, selectRedButtonON=false, selectYellowButtonON=false, selectGreenButtonON=false;
 Boolean selectTurquoiseButtonON=false, selectCyanButtonON=false, selectBlueButtonON=false, selectPurpleButtonON=false, selectPinkButtonON=false, selectOrangeButtonON=false;
+Boolean sizeButtonON=false, xsSizeON=false, sSizeON=false, mSizeON=false, lSizeON=false, xlSizeON=false;
 int XS=1, S=4, M=7, L=10, XL=13;
 //
 void setup()
@@ -174,6 +175,12 @@ void draw()
   if ( selectOrangeButtonON==true && draw == true && mouseX>drawingSurfaceX && mouseX<drawingSurfaceX+drawingSurfaceWidth && mouseY>drawingSurfaceY && mouseY<drawingSurfaceY+drawingSurfaceHeight) {
     stroke(orange);
     fill(orange);
+  }
+  //
+  //
+  //
+  if ( sizeButtonON=true && mouseX>sizeButtonX && mouseX<sizeButtonX+sizeButtonWidth && mouseY>sizeButtonY && mouseY<sizeButtonY+sizeButtonHeight ) {
+    sizeXSButton();
   }
 }//End draw
 //
@@ -399,6 +406,20 @@ void mousePressed()
     selectPurpleButtonON=false;
     selectPinkButtonON=false;
     selectOrangeButtonON=true;
+  }
+  //
+  //
+  //
+  if ( mouseX>sizeButtonX && mouseX<sizeButtonX+sizeButtonWidth && mouseY>sizeButtonY && mouseY<sizeButtonY+sizeButtonHeight ) {
+    sizeButtonON=true;
+  }
+  //
+  if ( mouseX>sizeButtonX && mouseX<sizeButtonX+sizeButtonWidth && mouseY>sizeButtonY && mouseY<sizeButtonY+sizeButtonHeight ) {
+    xsSizeON=true;
+    sSizeON=false; 
+    mSizeON=false;
+    lSizeON=false;
+    xlSizeON=false;
   }
   //
 }//End mousePressed
