@@ -13,7 +13,7 @@ Boolean selectButtonON=false, selectPenButtonON=false, selectCircleButtonON=fals
 Boolean selectColorButtonON=false;
 Boolean selectGreyButtonON=false, selectBlackButtonON=false, selectBrownButtonON=false, selectRedButtonON=false, selectYellowButtonON=false, selectGreenButtonON=false;
 Boolean selectTurquoiseButtonON=false, selectCyanButtonON=false, selectBlueButtonON=false, selectPurpleButtonON=false, selectPinkButtonON=false, selectOrangeButtonON=false;
-//Boolean sizeButtonON=false, xsSizeON=false, sSizeON=false, mSizeON=false, lSizeON=false, xlSizeON=false;
+Boolean sizeButtonON=false, xsSizeON=false, sSizeON=false, mSizeON=false, lSizeON=false;
 //
 void setup()
 {
@@ -128,6 +128,7 @@ void draw()
     }
     line (mouseX, mouseY, pmouseX, pmouseY); //Pen drawing tool
     fill(defaultGrey);
+    strokeWeight(1);
     rect( selectingSurfaceX, selectingSurfaceY, selectingSurfaceWidth, selectingSurfaceHeight );
     fill(resetWhite);
     selectDrawButtons();
@@ -186,6 +187,7 @@ void draw()
     }
     ellipse( mouseX, mouseY, drawingDiameter, drawingDiameter); //Circle Drawing Tool
     fill(defaultGrey);
+    strokeWeight(1);
     rect( selectingSurfaceX, selectingSurfaceY, selectingSurfaceWidth, selectingSurfaceHeight );
     fill(resetWhite);
     selectDrawButtons();
@@ -198,10 +200,10 @@ void draw()
     noStroke();
     ellipse( mouseX, mouseY, drawingDiameter, drawingDiameter); //Circle Erasing Tool
     fill(defaultGrey);
+    strokeWeight(1);
     rect( selectingSurfaceX, selectingSurfaceY, selectingSurfaceWidth, selectingSurfaceHeight );
     fill(resetWhite);
     selectDrawButtons();
-    stroke(1);
   }
   //
   //Color
@@ -228,14 +230,29 @@ void draw()
    }
    */
   //
-  /*Size Buttons
-   //
-   if ( sizeButtonON=true && mouseX>sizeButtonX && mouseX<sizeButtonX+sizeButtonWidth && mouseY>sizeButtonY && mouseY<sizeButtonY+sizeButtonHeight ) {
-   sizeXSButton();
-   }
-   if ( xsSizeON=true && draw == true && mouseX>drawingSurfaceX && mouseX<drawingSurfaceX+drawingSurfaceWidth && mouseY>drawingSurfaceY && mouseY<drawingSurfaceY+drawingSurfaceHeight ) {
-   strokeWeight(width*1/100);
-   }*/
+  //Size Buttons
+  //
+  if ( sizeButtonON=true && mouseX>sizeButtonX && mouseX<sizeButtonX+sizeButtonWidth && mouseY>sizeButtonY && mouseY<sizeButtonY+sizeButtonHeight ) {
+    sizeXSButton();
+  }
+  //
+  if ( mouseX>sizeXSButtonX-sizeXSButtonDiameter/2 && mouseX<sizeXSButtonX+sizeXSButtonDiameter/2 && mouseY>sizeXSButtonY-sizeXSButtonDiameter/2 && mouseY<sizeXSButtonY+sizeXSButtonDiameter/2 ) {
+    xsSizeON=true;
+    sSizeON=false;
+    mSizeON=false;
+    lSizeON=false;
+    xlSizeON=false;
+  }
+  /*if ( selectPenButtonON=true && xsSizeON==true && draw == true && mouseX>drawingSurfaceX && mouseX<drawingSurfaceX+drawingSurfaceWidth && mouseY>drawingSurfaceY && mouseY<drawingSurfaceY+drawingSurfaceHeight ) {
+    strokeWeight(sizeXSButtonDiameter);
+    line (mouseX, mouseY, pmouseX, pmouseY);
+  }
+  */
+  if ( selectCircleButtonON=true && xsSizeON==true && draw == true && mouseX>drawingSurfaceX && mouseX<drawingSurfaceX+drawingSurfaceWidth && mouseY>drawingSurfaceY && mouseY<drawingSurfaceY+drawingSurfaceHeight ) {
+    strokeWeight(sizeXSButtonDiameter);
+    ellipse( mouseX, mouseY, drawingDiameter, drawingDiameter);
+  }
+  //
 }//End draw
 //
 void keyPressed() {
@@ -479,19 +496,10 @@ void mousePressed()
     selectOrangeButtonON=true;
   }
   //
-  /*
   if ( mouseX>sizeButtonX && mouseX<sizeButtonX+sizeButtonWidth && mouseY>sizeButtonY && mouseY<sizeButtonY+sizeButtonHeight ) {
-   sizeButtonON=true;
-   }
-   //
-   if ( mouseX>sizeXSButtonX-sizeXSButtonDiameter/2 && mouseX<sizeXSButtonX+sizeXSButtonDiameter/2 && mouseY>sizeXSButtonY-sizeXSButtonDiameter/2 && mouseY<sizeXSButtonY+sizeXSButtonDiameter/2 ) {
-   xsSizeON=true;
-   sSizeON=false;
-   mSizeON=false;
-   lSizeON=false;
-   xlSizeON=false;
-   }
-   */
+    sizeButtonON=true;
+  }
+  //
 }//End mousePressed
 //
 //End MAIN Program

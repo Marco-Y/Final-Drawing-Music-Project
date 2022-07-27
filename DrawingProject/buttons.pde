@@ -67,6 +67,7 @@ void selectPenButton() {
   penTipY3 = penRectY;
   //
   stroke(black);
+  strokeWeight(1);
   fill(resetWhite);
   rect(selectPenButtonX, selectPenButtonY, selectPenButtonWidth, selectPenButtonHeight);
   fill(defaultGrey);
@@ -85,6 +86,7 @@ void selectCircleButton() {
   selectCircleEllipseDiameter = selectButtonWidth*0.4;
   //
   stroke(black);
+  strokeWeight(1);
   rect(selectCircleButtonX, selectCircleButtonY, selectCircleButtonWidth, selectCircleButtonHeight);
   ellipse(selectCircleEllipseX, selectCircleEllipseY, selectCircleEllipseDiameter, selectCircleEllipseDiameter);
 }
@@ -104,6 +106,7 @@ void selectEraserButton() {
   selectEraserShapeHeight2 = selectButtonHeight*19/40;
   //
   stroke(black);
+  strokeWeight(1);
   rect(selectEraserButtonX, selectEraserButtonY, selectEraserButtonWidth, selectEraserButtonHeight);
   rect(selectEraserShapeX1, selectEraserShapeY1, selectEraserShapeWidth1, selectEraserShapeHeight1);
   fill(defaultGrey);
@@ -132,6 +135,7 @@ void selectGreyButton() {
   colorEllipseDiameter = selectColorButtonWidth*1/4;
   //
   stroke(black);
+  strokeWeight(1);
   fill(resetWhite);
   rect(selectGreyButtonX, selectGreyButtonY, selectGreyButtonWidth, selectGreyButtonHeight);
   fill(defaultGrey);
@@ -148,6 +152,7 @@ void selectBlackButton() {
   selectBlackEllipseY = selectGreyEllipseY;
   //
   stroke(black);
+  strokeWeight(1);
   fill(resetWhite);
   rect(selectBlackButtonX, selectBlackButtonY, selectBlackButtonWidth, selectBlackButtonHeight);
   fill(black);
@@ -163,6 +168,7 @@ void selectBrownButton() {
   selectBrownEllipseY = selectColorButtonY+selectColorButtonHeight*1/4;
   //
   stroke(black);
+  strokeWeight(1);
   fill(resetWhite);
   rect(selectBrownButtonX, selectBrownButtonY, selectBrownButtonWidth, selectBrownButtonHeight);
   fill(brown);
@@ -179,6 +185,7 @@ void selectRedButton() {
   selectRedEllipseY = selectGreyEllipseY;
   //
   stroke(black);
+  strokeWeight(1);
   fill(resetWhite);
   rect(selectRedButtonX, selectRedButtonY, selectRedButtonWidth, selectRedButtonHeight);
   fill(red);
@@ -195,6 +202,7 @@ void selectYellowButton() {
   selectYellowEllipseY = selectGreyEllipseY;
   //
   stroke(black);
+  strokeWeight(1);
   fill(resetWhite);
   rect(selectYellowButtonX, selectYellowButtonY, selectYellowButtonWidth, selectYellowButtonHeight);
   fill(yellow);
@@ -211,6 +219,7 @@ void selectGreenButton() {
   selectGreenEllipseY = selectGreyEllipseY;
   //
   stroke(black);
+  strokeWeight(1);
   fill(resetWhite);
   rect(selectGreenButtonX, selectGreenButtonY, selectGreenButtonWidth, selectGreenButtonHeight);
   fill(green);
@@ -227,6 +236,7 @@ void selectTurquoiseButton() {
   selectTurquoiseEllipseY = selectColorButtonY+selectColorButtonHeight*3/4;
   //
   stroke(black);
+  strokeWeight(1);
   fill(resetWhite);
   rect(selectTurquoiseButtonX, selectTurquoiseButtonY, selectTurquoiseButtonWidth, selectTurquoiseButtonHeight);
   fill(turquoise);
@@ -243,6 +253,7 @@ void selectCyanButton() {
   selectCyanEllipseY = selectTurquoiseEllipseY;
   //
   stroke(black);
+  strokeWeight(1);
   fill(resetWhite);
   rect(selectCyanButtonX, selectCyanButtonY, selectCyanButtonWidth, selectCyanButtonHeight);
   fill(cyan);
@@ -259,6 +270,7 @@ void selectBlueButton() {
   selectBlueEllipseY = selectTurquoiseEllipseY;
   //
   stroke(black);
+  strokeWeight(1);
   fill(resetWhite);
   rect(selectBlueButtonX, selectBlueButtonY, selectBlueButtonWidth, selectBlueButtonHeight);
   fill(blue);
@@ -275,6 +287,7 @@ void selectPurpleButton() {
   selectPurpleEllipseY = selectTurquoiseEllipseY;
   //
   stroke(black);
+  strokeWeight(1);
   fill(resetWhite);
   rect(selectPurpleButtonX, selectPurpleButtonY, selectPurpleButtonWidth, selectPurpleButtonHeight);
   fill(purple);
@@ -291,6 +304,7 @@ void selectPinkButton() {
   selectPinkEllipseY = selectTurquoiseEllipseY;
   //
   stroke(black);
+  strokeWeight(1);
   fill(resetWhite);
   rect(selectPinkButtonX, selectPinkButtonY, selectPinkButtonWidth, selectPinkButtonHeight);
   fill(pink);
@@ -307,6 +321,7 @@ void selectOrangeButton() {
   selectOrangeEllipseY = selectTurquoiseEllipseY;
   //
   stroke(black);
+  strokeWeight(1);
   fill(resetWhite);
   rect(selectOrangeButtonX, selectOrangeButtonY, selectOrangeButtonWidth, selectOrangeButtonHeight);
   fill(orange);
@@ -320,6 +335,7 @@ void sizeButton() {
   sizeButtonWidth = selectButtonWidth;
   sizeButtonHeight = selectButtonHeight;
   //
+  strokeWeight(1);
   rect(sizeButtonX, sizeButtonY, sizeButtonWidth, sizeButtonHeight);
 }
 //
@@ -328,6 +344,7 @@ void sizeXSButton() {
   sizeXSButtonY = sizeButtonY+selectButtonHeight*1/2;
   sizeXSButtonDiameter = width*1/100;
   //
+  strokeWeight(1);
   ellipse(sizeXSButtonX, sizeXSButtonY, sizeXSButtonDiameter, sizeXSButtonDiameter);
 }
   
