@@ -34,6 +34,8 @@ float selectPurpleButtonX, selectPurpleButtonY, selectPurpleButtonWidth, selectP
 float selectPurpleEllipseX, selectPurpleEllipseY;
 float selectPinkButtonX, selectPinkButtonY, selectPinkButtonWidth, selectPinkButtonHeight;
 float selectPinkEllipseX, selectPinkEllipseY;
+float selectOrangeButtonX, selectOrangeButtonY, selectOrangeButtonWidth, selectOrangeButtonHeight;
+float selectOrangeEllipseX, selectOrangeEllipseY;
 //
 //Select Pen/Circle Stamp/Eraser buttons
 //
@@ -293,6 +295,21 @@ void selectPinkButton() {
   fill(resetWhite);
 }
 //
+void selectOrangeButton() {
+  selectOrangeButtonX = selectGreenButtonX;
+  selectOrangeButtonY = selectTurquoiseButtonY;
+  selectOrangeButtonWidth = selectTurquoiseButtonWidth;
+  selectOrangeButtonHeight = selectTurquoiseButtonHeight;
+  selectOrangeEllipseX = selectGreenEllipseX;
+  selectOrangeEllipseY = selectTurquoiseEllipseY;
+  //
+  stroke(black);
+  fill(resetWhite);
+  rect(selectOrangeButtonX, selectOrangeButtonY, selectOrangeButtonWidth, selectOrangeButtonHeight);
+  fill(orange);
+  ellipse(selectOrangeEllipseX, selectOrangeEllipseY, colorEllipseDiameter, colorEllipseDiameter);
+  fill(resetWhite);
+}
 //
 //void sizeButton() {
 //
