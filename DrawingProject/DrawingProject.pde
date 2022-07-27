@@ -233,7 +233,7 @@ void draw()
   //Size Buttons
   //
   if ( sizeButtonON==true && mouseX>sizeButtonX && mouseX<sizeButtonX+sizeButtonWidth && mouseY>sizeButtonY && mouseY<sizeButtonY+sizeButtonHeight ) {
-    sizeXSButton();
+    sizeSButton();
   }
   //
   if ( selectPenButtonON==true && sSizeON==true && draw == true && mouseX>drawingSurfaceX && mouseX<drawingSurfaceX+drawingSurfaceWidth && mouseY>drawingSurfaceY && mouseY<drawingSurfaceY+drawingSurfaceHeight ) {
