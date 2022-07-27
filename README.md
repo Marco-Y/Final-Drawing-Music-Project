@@ -8,7 +8,8 @@ To Do List
 - [ ] <del>Font Picker</del> No text in this project
 - [x] Color Picker
 - [x] Shapes
-- [ ] Size, strokeWeight
-- [ ] Reset, quitButton
+- [x] Size, strokeWeight
+- [x] Reset, quitButton
 - [ ] Background IMG (optional)
+- [ ] Templates
 - [ ] <del>Effects (e.g. blur, brightness adjustment etc.)</del>
