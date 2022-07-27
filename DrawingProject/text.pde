@@ -3,11 +3,12 @@
 PFont timesNewRomanFont;
 //String
 String selectText = "Select";
-String sizeText = "Size of pen";
+String sizeText = "Size";
 String selectColorText = "Color";
 //float
 float selectTextX, selectTextY, selectTextWidth, selectTextHeight;
 float selectColorTextX, selectColorTextY, selectColorTextWidth, selectColorTextHeight;
+float sizeTextX, sizeTextY, sizeTextWidth, sizeTextHeight;
 //
 void selectText() {
   selectTextX = width*0;
@@ -33,4 +34,16 @@ void selectColorText() {
   textAlign(CENTER,CENTER);
   textFont(timesNewRomanFont, 20);
   text(selectColorText, selectColorTextX, selectColorTextY, selectColorTextWidth, selectColorTextHeight);
+}
+//
+void sizeText() {
+  sizeTextX = sizeButtonX;
+  sizeTextY = sizeButtonY;
+  sizeTextWidth = sizeButtonWidth;
+  sizeTextHeight = sizeButtonHeight;
+  //
+  fill(black);
+  textAlign(CENTER,CENTER);
+  textFont(timesNewRomanFont, 20);
+  text(sizeText, sizeTextX, sizeTextY, sizeTextWidth, sizeTextHeight);
 }

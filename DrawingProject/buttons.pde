@@ -2,7 +2,6 @@
 float selectButtonX, selectButtonY, selectButtonWidth, selectButtonHeight;
 float selectPenButtonX, selectPenButtonY, selectPenButtonWidth, selectPenButtonHeight;
 float penRectX, penRectY, penRectWidth, penRectHeight;
-float sizeButtonX, sizeButtonY, sizeButtonWidth, sizeButtonHeight;
 float penTipX, penTipY, penTipX2, penTipY2, penTipX3, penTipY3;
 float selectCircleButtonX, selectCircleButtonY, selectCircleButtonWidth, selectCircleButtonHeight;
 float selectCircleEllipseX, selectCircleEllipseY, selectCircleEllipseDiameter;
@@ -37,7 +36,9 @@ float selectPinkEllipseX, selectPinkEllipseY;
 float selectOrangeButtonX, selectOrangeButtonY, selectOrangeButtonWidth, selectOrangeButtonHeight;
 float selectOrangeEllipseX, selectOrangeEllipseY;
 //
-//Select Pen/Circle Stamp/Eraser buttons
+//Size Buttons
+//
+float sizeButtonX, sizeButtonY, sizeButtonWidth, sizeButtonHeight;
 //
 void selectButton() {
   selectButtonX = width*0;
@@ -311,6 +312,11 @@ void selectOrangeButton() {
   fill(resetWhite);
 }
 //
-//void sizeButton() {
-//
-//}
+void sizeButton() {
+  sizeButtonX = selectButtonX;
+  sizeButtonY = selectButtonHeight*2;
+  sizeButtonWidth = selectButtonWidth;
+  sizeButtonHeight = selectButtonHeight;
+  //
+  rect(sizeButtonX, sizeButtonY, sizeButtonWidth, sizeButtonHeight);
+}

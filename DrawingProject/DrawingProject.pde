@@ -93,6 +93,7 @@ void draw()
   }
   //
   if ( selectEraserButtonON==true && draw == true && mouseX>drawingSurfaceX && mouseX<drawingSurfaceX+drawingSurfaceWidth && mouseY>drawingSurfaceY && mouseY<drawingSurfaceY+drawingSurfaceHeight) {
+    soundEffect3.play();
     fill(resetWhite);
     noStroke();
     ellipse( mouseX, mouseY, drawingDiameter, drawingDiameter); //Circle Erasing Tool
@@ -119,13 +120,13 @@ void draw()
     selectPinkButton();
     selectOrangeButton();
   }
-  //
+  /*
   if (mousePressed==true) {
     if ( mouseX>selectGreyButtonX && mouseX<selectGreyButtonX+selectGreyButtonWidth*6 && mouseY>selectGreyButtonY && mouseY<selectGreyButtonY+selectGreyButtonHeight*2) {
       soundEffect5.play();
     }
   }
-  //
+  */
   if ( selectGreyButtonON==true && draw == true && mouseX>drawingSurfaceX && mouseX<drawingSurfaceX+drawingSurfaceWidth && mouseY>drawingSurfaceY && mouseY<drawingSurfaceY+drawingSurfaceHeight) {
     stroke(defaultGrey);
     fill(defaultGrey);
