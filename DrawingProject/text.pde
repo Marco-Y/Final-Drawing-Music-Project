@@ -6,12 +6,14 @@ String selectColorText = "Color";
 String resetText = "Reset";
 String quitText = "Quit";
 String templateText = "Template";
+String musicText = "Music";
 float selectTextX, selectTextY, selectTextWidth, selectTextHeight;
 float selectColorTextX, selectColorTextY, selectColorTextWidth, selectColorTextHeight;
 float sizeTextX, sizeTextY, sizeTextWidth, sizeTextHeight;
 float templateTextX, templateTextY, templateTextWidth, templateTextHeight;
 float resetTextX, resetTextY, resetTextWidth, resetTextHeight;
 float quitTextX, quitTextY, quitTextWidth, quitTextHeight;
+float musicTextX, musicTextY, musicTextWidth, musicTextHeight;
 //
 void selectText() {
   selectTextX = width*0;
@@ -85,4 +87,16 @@ void quitText() {
   textAlign(CENTER,CENTER);
   textFont(timesNewRomanFont, 40);
   text(quitText, quitTextX, quitTextY, quitTextWidth, quitTextHeight);
+}
+//
+void musicText() {
+  musicTextX = selectButtonX;
+  musicTextY = resetButtonY+resetButtonHeight;
+  musicTextWidth = selectingSurfaceWidth;
+  musicTextHeight = selectButtonHeight/2;
+  //
+  fill(black);
+  textAlign(CENTER,CENTER);
+  textFont(timesNewRomanFont, 30);
+  text(musicText, musicTextX, musicTextY, musicTextWidth, musicTextHeight);
 }

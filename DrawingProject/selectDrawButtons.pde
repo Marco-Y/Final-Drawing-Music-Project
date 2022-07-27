@@ -54,4 +54,6 @@ void selectDrawButtons() {
   fill(buttonFill); //2-colors to start , remember nightMode adds choice
   quitButton();
   quitText();
+  fill(resetWhite);
+  musicText();
 }

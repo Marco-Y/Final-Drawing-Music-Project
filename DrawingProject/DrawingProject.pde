@@ -107,6 +107,7 @@ void setup()
 //
 void draw()
 {
+  song1.play();
   selectDrawButtons();
   //
   //Select
@@ -239,6 +240,15 @@ void draw()
 }//End draw
 //
 void keyPressed() {
+  if ( keyCode==RIGHT || key=='f' ) song1.skip(5000); // skip forward 1 second (1000 milliseconds)
+  if ( keyCode==LEFT || key=='r' ) song1.skip(-5000); // skip backwards 1 second (1000 milliseconds)
+  if (key=='m' || key=='M') {//Mute Button
+    if (song1.isMuted()) {
+      song1.unmute();
+    } else {
+      song1.mute();
+    }
+  }
 }//End keyPressed
 //
 void mousePressed()
