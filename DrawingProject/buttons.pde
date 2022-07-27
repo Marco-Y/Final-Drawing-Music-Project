@@ -14,24 +14,22 @@ float selectColorButtonX, selectColorButtonY, selectColorButtonWidth, selectColo
 float colorEllipseDiameter;
 float selectGreyButtonX, selectGreyButtonY, selectGreyButtonWidth, selectGreyButtonHeight;
 float selectGreyEllipseX, selectGreyEllipseY;
-//float selectGreyEllipseDiameter;
 float selectBlackButtonX, selectBlackButtonY, selectBlackButtonWidth, selectBlackButtonHeight;
-float selectBlackEllipseX, selectBlackEllipseY, selectBlackEllipseDiameter;
+float selectBlackEllipseX, selectBlackEllipseY;
 float selectBrownButtonX, selectBrownButtonY, selectBrownButtonWidth, selectBrownButtonHeight;
-float selectBrownEllipseX, selectBrownEllipseY, selectBrownEllipseDiameter;
+float selectBrownEllipseX, selectBrownEllipseY;
 float selectRedButtonX, selectRedButtonY, selectRedButtonWidth, selectRedButtonHeight;
-float selectRedEllipseX, selectRedEllipseY, selectRedEllipseDiameter;
+float selectRedEllipseX, selectRedEllipseY;
 float selectYellowButtonX, selectYellowButtonY, selectYellowButtonWidth, selectYellowButtonHeight;
-float selectYellowEllipseX, selectYellowEllipseY, selectYellowEllipseDiameter;
+float selectYellowEllipseX, selectYellowEllipseY;
 float selectGreenButtonX, selectGreenButtonY, selectGreenButtonWidth, selectGreenButtonHeight;
-float selectGreenEllipseX, selectGreenEllipseY, selectGreenEllipseDiameter;
+float selectGreenEllipseX, selectGreenEllipseY;
 float selectTurquoiseButtonX, selectTurquoiseButtonY, selectTurquoiseButtonWidth, selectTurquoiseButtonHeight;
-float selectTurquoiseEllipseX, selectTurquoiseEllipseY, selectTurquoiseEllipseDiameter;
+float selectTurquoiseEllipseX, selectTurquoiseEllipseY;
 float selectCyanButtonX, selectCyanButtonY, selectCyanButtonWidth, selectCyanButtonHeight;
-float selectCyanEllipseX, selectCyanEllipseY, selectCyanEllipseDiameter;
+float selectCyanEllipseX, selectCyanEllipseY;
 float selectBlueButtonX, selectBlueButtonY, selectBlueButtonWidth, selectBlueButtonHeight;
-float selectBlueEllipseX, selectBlueEllipseY, selectBlueEllipseDiameter;
-
+float selectBlueEllipseX, selectBlueEllipseY;
 //
 //Select Pen/Circle Stamp/Eraser buttons
 //
@@ -139,7 +137,6 @@ void selectBlackButton() {
   selectBlackButtonHeight = selectGreyButtonHeight;
   selectBlackEllipseX = selectColorButtonWidth+selectGreyButtonWidth*3/2;
   selectBlackEllipseY = selectGreyEllipseY;
-  selectBlackEllipseDiameter = colorEllipseDiameter;
   //
   stroke(black);
   fill(resetWhite);
@@ -155,7 +152,6 @@ void selectBrownButton() {
   selectBrownButtonHeight = selectColorButtonHeight*1/2;
   selectBrownEllipseX = selectColorButtonWidth*2+selectColorButtonWidth*1/4;
   selectBrownEllipseY = selectColorButtonY+selectColorButtonHeight*1/4;
-  selectBrownEllipseDiameter = colorEllipseDiameter;
   //
   stroke(black);
   fill(resetWhite);
@@ -172,7 +168,6 @@ void selectRedButton() {
   selectRedButtonHeight = selectGreyButtonHeight;
   selectRedEllipseX = selectColorButtonWidth*2+selectGreyButtonWidth*3/2;
   selectRedEllipseY = selectGreyEllipseY;
-  selectRedEllipseDiameter = colorEllipseDiameter;
   //
   stroke(black);
   fill(resetWhite);
@@ -189,7 +184,6 @@ void selectYellowButton() {
   selectYellowButtonHeight = selectGreyButtonHeight;
   selectYellowEllipseX = selectColorButtonWidth*3+selectColorButtonWidth*1/4;
   selectYellowEllipseY = selectGreyEllipseY;
-  selectYellowEllipseDiameter = colorEllipseDiameter;
   //
   stroke(black);
   fill(resetWhite);
@@ -206,7 +200,6 @@ void selectGreenButton() {
   selectGreenButtonHeight = selectGreyButtonHeight;
   selectGreenEllipseX = selectColorButtonWidth*3+selectGreyButtonWidth*3/2;
   selectGreenEllipseY = selectGreyEllipseY;
-  selectGreenEllipseDiameter = colorEllipseDiameter;
   //
   stroke(black);
   fill(resetWhite);
@@ -223,7 +216,6 @@ void selectTurquoiseButton() {
   selectTurquoiseButtonHeight = selectColorButtonHeight*1/2;
   selectTurquoiseEllipseX = selectColorButtonWidth+selectColorButtonWidth*1/4;
   selectTurquoiseEllipseY = selectColorButtonY+selectColorButtonHeight*3/4;
-  selectTurquoiseEllipseDiameter = colorEllipseDiameter;
   //
   stroke(black);
   fill(resetWhite);
@@ -240,7 +232,6 @@ void selectCyanButton() {
   selectCyanButtonHeight = selectTurquoiseButtonHeight;
   selectCyanEllipseX = selectColorButtonWidth+selectTurquoiseButtonWidth*3/2;
   selectCyanEllipseY = selectTurquoiseEllipseY;
-  selectCyanEllipseDiameter = colorEllipseDiameter;
   //
   stroke(black);
   fill(resetWhite);
@@ -257,7 +248,6 @@ void selectBlueButton() {
   selectBlueButtonHeight = selectTurquoiseButtonHeight;
   selectBlueEllipseX = selectBrownEllipseX;
   selectBlueEllipseY = selectTurquoiseEllipseY;
-  selectBlueEllipseDiameter = selectTurquoiseEllipseDiameter;
 }
 //
 //
