@@ -8,7 +8,10 @@ import ddf.minim.ugens.*;
 //Global Variables
 Minim minim;
 AudioPlayer soundEffect1, soundEffect2, soundEffect3, soundEffect4, soundEffect5, soundEffect6, soundEffect7, soundEffect8, soundEffect9;
-AudioPlayer soundEffect10, soundEffect11;
+AudioPlayer soundEffect10, soundEffect11, soundEffect12, soundEffect13, soundEffect14, soundEffect15, soundEffect16, soundEffect17, soundEffect18, soundEffect19, soundEffect20, soundEffect21, soundEffect22;
+AudioPlayer song1;
+AudioMetaData songMetaData1;
+//
 Boolean draw=false;
 Boolean selectButtonON=false, selectPenButtonON=false, selectCircleButtonON=false, selectEraserButtonON=false;
 Boolean selectColorButtonON=false;
@@ -22,19 +25,6 @@ void setup()
   //Display Orientation Checker
   //Display and CANVAS Checker
   size(1200, 750); //Landscape (Portrait or Square)
-  minim = new Minim(this);
-  soundEffect1 = minim.loadFile("Cartoon Boing.mp3"); //used as error sound
-  soundEffect2 = minim.loadFile("Wooden Bat Tapping Home Plate.mp3"); //Circle Stamping Sound
-  soundEffect3 = minim.loadFile("Dry Off with Towel.mp3"); //Eraser Sound
-  soundEffect4 = minim.loadFile("Pen Clicking .mp3"); //Pen Select Sound
-  soundEffect5 = minim.loadFile("Swoosh.mp3"); //Color Select Sound
-  soundEffect6 = minim.loadFile("Winding Alarm Clock.mp3"); //Size Select S Sound
-  soundEffect7 = minim.loadFile("Winding Alarm Clock copy.mp3"); //Size Select M Sound
-  soundEffect8 = minim.loadFile("Winding Alarm Clock copy 2.mp3"); ///Size Select L Sound
-  soundEffect9 = minim.loadFile("Pen Writing .mp3"); //Pen Writing Sound
-  soundEffect10 = minim.loadFile("Swoosh copy.mp3"); //Color
-  soundEffect11 = minim.loadFile("Swoosh copy 2.mp3");
-  //
   println ("width:", width, "\t height:", height, "\t displayWidth:", displayWidth, "\t\t displayHeight:", displayHeight);
   int appWidth = width;
   int appHeight = height;
@@ -59,6 +49,31 @@ void setup()
     appHeight *= 0;
     println(instruct);
   }
+  //
+  minim = new Minim(this);
+  soundEffect1 = minim.loadFile("Cartoon Boing.mp3"); //used as error sound
+  soundEffect2 = minim.loadFile("Wooden Bat Tapping Home Plate.mp3"); //Circle Stamping Sound
+  soundEffect3 = minim.loadFile("Dry Off with Towel.mp3"); //Eraser Sound
+  soundEffect4 = minim.loadFile("Pen Clicking .mp3"); //Pen Select Sound
+  soundEffect5 = minim.loadFile("Swoosh.mp3"); //Color Select Sound
+  soundEffect6 = minim.loadFile("Winding Alarm Clock.mp3"); //Size Select S Sound
+  soundEffect7 = minim.loadFile("Winding Alarm Clock copy.mp3"); //Size Select M Sound
+  soundEffect8 = minim.loadFile("Winding Alarm Clock copy 2.mp3"); ///Size Select L Sound
+  soundEffect9 = minim.loadFile("Pen Writing .mp3"); //Pen Writing Sound
+  soundEffect10 = minim.loadFile("Swoosh copy.mp3"); //Color
+  soundEffect11 = minim.loadFile("Swoosh copy 2.mp3");
+  soundEffect12 = minim.loadFile("Swoosh copy 3.mp3");
+  soundEffect13 = minim.loadFile("Swoosh copy 4.mp3");
+  soundEffect14 = minim.loadFile("Swoosh copy 5.mp3");
+  soundEffect15 = minim.loadFile("Swoosh copy 6.mp3");
+  soundEffect16 = minim.loadFile("Swoosh copy 7.mp3");
+  soundEffect17 = minim.loadFile("Swoosh copy 8.mp3");
+  soundEffect18 = minim.loadFile("Swoosh copy 9.mp3");
+  soundEffect19 = minim.loadFile("Swoosh copy 10.mp3");
+  soundEffect20 = minim.loadFile("Swoosh copy 11.mp3");
+  soundEffect21 = minim.loadFile("Swoosh copy 12.mp3");
+  //
+  song1 = minim.loadFile("Illusions - Anno Domini Beats.mp3");
   //
   populationVariables();
   //
@@ -157,8 +172,10 @@ void draw()
   }
   //
   if ( selectEraserButtonON==true && sSizeON==true && draw == true && mouseX>drawingSurfaceX && mouseX<drawingSurfaceX+drawingSurfaceWidth && mouseY>drawingSurfaceY && mouseY<drawingSurfaceY+drawingSurfaceHeight ) {
+    noStroke();
     fill(resetWhite);
     ellipse( mouseX, mouseY, sizeSButtonDiameter, sizeSButtonDiameter);
+    stroke(1);
   }
   //
   //M Size
@@ -174,8 +191,10 @@ void draw()
   }
   //
   if ( selectEraserButtonON==true && mSizeON==true && draw == true && mouseX>drawingSurfaceX && mouseX<drawingSurfaceX+drawingSurfaceWidth && mouseY>drawingSurfaceY && mouseY<drawingSurfaceY+drawingSurfaceHeight ) {
+    noStroke();
     fill(resetWhite);
     ellipse( mouseX, mouseY, sizeMButtonDiameter, sizeMButtonDiameter);
+    stroke(1);
   }
   //
   //L Size
@@ -191,8 +210,10 @@ void draw()
   }
   //
   if ( selectEraserButtonON==true && lSizeON==true && draw == true && mouseX>drawingSurfaceX && mouseX<drawingSurfaceX+drawingSurfaceWidth && mouseY>drawingSurfaceY && mouseY<drawingSurfaceY+drawingSurfaceHeight ) {
+    noStroke();
     fill(resetWhite);
     ellipse( mouseX, mouseY, sizeLButtonDiameter, sizeLButtonDiameter);
+    stroke(1);
   }
   //
 }//End draw
@@ -221,6 +242,13 @@ void mousePressed()
     selectEraserButtonON = false;
   } //End selectPenButtonON
   //
+  if ( selectPenButtonON==true && draw==true && mouseX>selectPenButtonX && mouseX<selectPenButtonX+selectPenButtonWidth && mouseY>selectPenButtonY && mouseY<selectPenButtonY+selectPenButtonHeight ) {
+    soundEffect9.loop();
+  } else {
+    soundEffect9.pause();
+    soundEffect9.rewind();
+  } //End selectPenButtonON
+  //
   if ( mouseX>selectCircleButtonX && mouseX<selectCircleButtonX+selectCircleButtonWidth && mouseY>selectCircleButtonY && mouseY<selectCircleButtonY+selectCircleButtonHeight ) {
     soundEffect2.play();
     selectPenButtonON = false;
@@ -236,6 +264,7 @@ void mousePressed()
   }
   //
   if ( mouseX>selectEraserButtonX && mouseX<selectEraserButtonX+selectEraserButtonWidth && mouseY>selectEraserButtonY && mouseY<selectEraserButtonY+selectEraserButtonHeight ) {
+    noStroke();
     soundEffect3.play();
     selectPenButtonON = false;
     selectCircleButtonON = false;

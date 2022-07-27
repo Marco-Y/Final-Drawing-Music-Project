@@ -50,10 +50,6 @@ void selectColorIfStatements() {
   }
 }
 //
-//
-//
-//
-//
 void selectColorSoundEffects() {
   if ( mouseX>selectGreyButtonX && mouseX<selectGreyButtonX+selectGreyButtonWidth && mouseY>selectGreyButtonY && mouseY<selectGreyButtonY+selectGreyButtonHeight ) {
     soundEffect10.play();

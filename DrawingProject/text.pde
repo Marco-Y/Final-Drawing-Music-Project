@@ -5,9 +5,11 @@ String sizeText = "Size";
 String selectColorText = "Color";
 String resetText = "Reset";
 String quitText = "Quit";
+String templateText = "Template";
 float selectTextX, selectTextY, selectTextWidth, selectTextHeight;
 float selectColorTextX, selectColorTextY, selectColorTextWidth, selectColorTextHeight;
 float sizeTextX, sizeTextY, sizeTextWidth, sizeTextHeight;
+float templateTextX, templateTextY, templateTextWidth, templateTextHeight;
 float resetTextX, resetTextY, resetTextWidth, resetTextHeight;
 float quitTextX, quitTextY, quitTextWidth, quitTextHeight;
 //
@@ -47,6 +49,18 @@ void sizeText() {
   textAlign(CENTER,CENTER);
   textFont(timesNewRomanFont, 20);
   text(sizeText, sizeTextX, sizeTextY, sizeTextWidth, sizeTextHeight);
+}
+//
+void templateText() {
+ templateTextX = templateButtonX;
+ templateTextY = templateButtonY;
+ templateTextWidth = templateButtonWidth;
+ templateTextHeight = templateButtonHeight;
+ //
+ fill(black);
+ textAlign(CENTER,CENTER);
+ textFont(timesNewRomanFont, 20);
+ text(templateText, templateTextX, templateTextY, templateTextWidth, templateTextHeight);
 }
 //
 void resetText() {

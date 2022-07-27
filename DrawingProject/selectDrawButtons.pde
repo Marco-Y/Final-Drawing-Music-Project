@@ -27,6 +27,16 @@ void selectDrawButtons() {
   sizeText();
   fill(resetWhite);
   //
+  if (mouseX> templateButtonX && mouseX< templateButtonX+templateButtonWidth && mouseY> templateButtonY && mouseY< templateButtonY+templateButtonHeight) {
+    buttonFill = purple;
+  } else {
+    buttonFill = blue;
+  }//End Hover-over
+  fill(buttonFill); //2-colors to start , remember nightMode adds choice
+  templateButton();
+  templateText();
+  fill(resetWhite);
+  //
   if (mouseX> resetButtonX && mouseX< resetButtonX+resetButtonWidth && mouseY> resetButtonY && mouseY< resetButtonY+resetButtonHeight) {
     buttonFill = green;
   } else {
@@ -44,5 +54,4 @@ void selectDrawButtons() {
   fill(buttonFill); //2-colors to start , remember nightMode adds choice
   quitButton();
   quitText();
-  //
 }
