@@ -96,7 +96,7 @@ void setup()
   println( "Track: ", songMetaData1.track() );
   println( "Genre: ", songMetaData1.genre() );
   println( "Encoded: ", songMetaData1.encoded() );
-    //Song 2 Meta Data
+  //Song 2 Meta Data
   println( "File Name: ", songMetaData2.fileName() );
   println( "Song Length (in milliseconds): ", songMetaData2.length() );
   println( "Song Length (in seconds): ", songMetaData2.length()/1000 );
@@ -116,6 +116,7 @@ void setup()
   println( "Genre: ", songMetaData2.genre() );
   println( "Encoded: ", songMetaData2.encoded() );
   //
+  song1.play();
   populationVariables();
   //
   strokeWeight(1);
@@ -128,7 +129,6 @@ void setup()
 //
 void draw()
 {
-  song1.play();
   selectDrawButtons();
   //
   //Select
@@ -261,14 +261,21 @@ void draw()
 }//End draw
 //
 void keyPressed() {
-  if ( keyCode==RIGHT || key=='f' ) song1.skip(5000); // skip forward 1 second (1000 milliseconds)
-  if ( keyCode==LEFT || key=='r' ) song1.skip(-5000); // skip backwards 1 second (1000 milliseconds)
+  if ( key=='f' || key=='F' ) song1.skip(5000); // skip forward 1 second (1000 milliseconds)
+  if ( key=='r' || key=='R' ) song1.skip(-5000); // skip backwards 1 second (1000 milliseconds)
+  if ( key=='s' || key=='S' ) { //STOP Button
+    if (song1.isPlaying()) {
+      song1.pause();
+      song1.rewind();
+    } else { //Song is not playing
+      song1.rewind();
+    }
+  }
   if ( key=='p' || key=='P' ) {//PLAY/PAUSE
     if ( song1.isPlaying() ) {
       song1.pause();
     } else if (song1.position() >= song1.length() - song1.length()*1/1000) {
-      song1.rewind();
-      song1.play();
+      song2.play();
     } else {
       song1.play();
     }

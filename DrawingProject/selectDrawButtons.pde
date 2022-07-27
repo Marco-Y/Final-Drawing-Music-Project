@@ -56,4 +56,7 @@ void selectDrawButtons() {
   quitText();
   fill(resetWhite);
   musicText();
+  textSize(20);
+  strokeWeight(1);
+  ppButton();
 }

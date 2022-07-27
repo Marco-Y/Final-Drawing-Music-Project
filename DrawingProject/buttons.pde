@@ -52,6 +52,10 @@ float templateButtonX, templateButtonY, templateButtonWidth, templateButtonHeigh
 float resetButtonX, resetButtonY, resetButtonWidth, resetButtonHeight;
 float quitButtonX, quitButtonY, quitButtonWidth, quitButtonHeight;
 //
+//Music
+//
+float ppButtonX, ppButtonY, ppButtonWidth, ppButtonHeight;
+//
 void selectButton() {
   selectButtonX = width*0;
   selectButtonY = height*0;
@@ -71,8 +75,8 @@ void selectPenButton() {
   penRectWidth = selectPenButtonWidth*3/10;
   penRectHeight = selectButtonHeight*3/5;
   penTipX = penRectX+penRectWidth*1/2;
-  penTipY = penRectY-penRectHeight*1/4; 
-  penTipX2 = penRectX; 
+  penTipY = penRectY-penRectHeight*1/4;
+  penTipX2 = penRectX;
   penTipY2 = penRectY;
   penTipX3 = penRectX+penRectWidth;
   penTipY3 = penRectY;
@@ -409,4 +413,17 @@ void quitButton() {
   quitButtonHeight = resetButtonHeight;
   //
   rect(quitButtonX, quitButtonY, quitButtonWidth, quitButtonHeight);
+}
+//
+void ppButton() {
+  ppButtonX = selectingSurfaceWidth*2/5;
+  ppButtonY = selectButtonHeight*25/4;
+  ppButtonWidth = selectButtonWidth;
+  ppButtonHeight = selectButtonHeight/2;
+  //
+  fill(resetWhite);
+  rect(ppButtonX, ppButtonY, ppButtonWidth, ppButtonHeight);
+  fill(black);
+  text("Play/Pause", ppButtonX, ppButtonY, ppButtonWidth, ppButtonHeight);
+  fill(resetWhite);
 }
