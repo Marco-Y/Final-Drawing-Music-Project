@@ -7,7 +7,7 @@ import ddf.minim.ugens.*;
 
 //Global Variables
 Minim minim;
-AudioPlayer soundEffect1, soundEffect2, soundEffect3, soundEffect4, soundEffect5, soundEffect6, soundEffect7;
+AudioPlayer soundEffect1, soundEffect2, soundEffect3, soundEffect4, soundEffect5, soundEffect6, soundEffect7, soundEffect8, soundEffect9;
 Boolean draw=false;
 Boolean selectButtonON=false, selectPenButtonON=false, selectCircleButtonON=false, selectEraserButtonON=false;
 Boolean selectColorButtonON=false;
@@ -27,8 +27,10 @@ void setup()
   soundEffect3 = minim.loadFile("Dry Off with Towel.mp3"); //Eraser Sound
   soundEffect4 = minim.loadFile("Pen Clicking .mp3"); //Pen Select Sound
   soundEffect5 = minim.loadFile("Swoosh.mp3"); //Color Select Sound
-  soundEffect6 = minim.loadFile("Winding Alarm Clock.mp3"); //Size Select Sound
-  soundEffect7 = minim.loadFile("Pen Writing .mp3"); //Pen Writing Sound
+  soundEffect6 = minim.loadFile("Winding Alarm Clock.mp3"); //Size Select S Sound
+  soundEffect7 = minim.loadFile("Winding Alarm Clock copy.mp3"); //Size Select M Sound
+  soundEffect8 = minim.loadFile("Winding Alarm Clock copy 2.mp3"); ///Size Select L Sound
+  soundEffect9 = minim.loadFile("Pen Writing .mp3"); //Pen Writing Sound
   //
   println ("width:", width, "\t height:", height, "\t displayWidth:", displayWidth, "\t\t displayHeight:", displayHeight);
   int appWidth = width;
@@ -457,6 +459,20 @@ void mousePressed()
   } else {
     soundEffect6.pause();
     soundEffect6.rewind();
+  }
+  //
+  if (mouseX> sizeMButtonX-sizeMButtonRadius && mouseX< sizeMButtonX+sizeMButtonRadius && mouseY> sizeMButtonY-sizeMButtonRadius && mouseY< sizeMButtonY+sizeMButtonRadius) {
+    soundEffect7.play();
+  } else {
+    soundEffect7.pause();
+    soundEffect7.rewind();
+  }
+  //
+  if (mouseX> sizeLButtonX-sizeLButtonRadius && mouseX< sizeLButtonX+sizeLButtonRadius && mouseY> sizeLButtonY-sizeLButtonRadius && mouseY< sizeLButtonY+sizeLButtonRadius) {
+    soundEffect8.play();
+  } else {
+    soundEffect8.pause();
+    soundEffect8.rewind();
   }
   //
   //Quit&Reset
