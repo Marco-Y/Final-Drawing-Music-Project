@@ -1,3 +1,4 @@
+//Color Palette Code
 void selectColorIfStatements() {
   if ( selectGreyButtonON==true && draw == true && mouseX>drawingSurfaceX && mouseX<drawingSurfaceX+drawingSurfaceWidth && mouseY>drawingSurfaceY && mouseY<drawingSurfaceY+drawingSurfaceHeight) {
     stroke(defaultGrey);

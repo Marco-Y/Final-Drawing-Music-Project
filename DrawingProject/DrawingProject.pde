@@ -215,7 +215,7 @@ void mousePressed()
   } //End selectPenButtonON
   //
   if ( mouseX>selectCircleButtonX && mouseX<selectCircleButtonX+selectCircleButtonWidth && mouseY>selectCircleButtonY && mouseY<selectCircleButtonY+selectCircleButtonHeight ) {
-    soundEffect2.play();
+    soundEffect2.loop();
     selectPenButtonON = false;
     selectCircleButtonON = true;
     selectEraserButtonON = false;
