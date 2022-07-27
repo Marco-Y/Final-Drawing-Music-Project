@@ -9,7 +9,7 @@ import ddf.minim.ugens.*;
 Boolean draw=false;
 Boolean selectButtonON=false, selectPenButtonON=false, selectCircleButtonON=false, selectEraserButtonON=false;
 Boolean selectColorButtonON=false;
-Boolean selectGreyButtonON=false, selectBlackButtonON=false, selectBrownButtonON=false;
+Boolean selectGreyButtonON=false, selectBlackButtonON=false, selectBrownButtonON=false, selectRedButtonON=false;
 int XS=1, S=4, M=7, L=10, XL=13, XXL=17;
 //
 void setup()
@@ -97,6 +97,7 @@ void draw()
     selectGreyButton();
     selectBlackButton();
     selectBrownButton();
+    selectRedButton();
   }
   //
   if ( selectGreyButtonON==true && draw == true && mouseX>drawingSurfaceX && mouseX<drawingSurfaceX+drawingSurfaceWidth && mouseY>drawingSurfaceY && mouseY<drawingSurfaceY+drawingSurfaceHeight) {
@@ -111,6 +112,10 @@ void draw()
   if ( selectBrownButtonON==true && draw == true && mouseX>drawingSurfaceX && mouseX<drawingSurfaceX+drawingSurfaceWidth && mouseY>drawingSurfaceY && mouseY<drawingSurfaceY+drawingSurfaceHeight) {
     stroke(brown);
     fill(brown);
+  }
+  if ( selectRedButtonON==true && draw == true && mouseX>drawingSurfaceX && mouseX<drawingSurfaceX+drawingSurfaceWidth && mouseY>drawingSurfaceY && mouseY<drawingSurfaceY+drawingSurfaceHeight) {
+    stroke(red);
+    fill(red);
   }
 }//End draw
 //
@@ -159,18 +164,28 @@ void mousePressed()
     selectGreyButtonON=true;
     selectBlackButtonON=false;
     selectBrownButtonON=false;
+    selectRedButtonON=false;
   }
   //
   if ( mouseX>selectBlackButtonX && mouseX<selectBlackButtonX+selectBlackButtonWidth && mouseY>selectBlackButtonY && mouseY<selectBlackButtonY+selectBlackButtonHeight ) {
     selectGreyButtonON=false;
     selectBlackButtonON=true;
     selectBrownButtonON=false;
+    selectRedButtonON=false;
   }
   //
   if ( mouseX>selectBrownButtonX && mouseX<selectBrownButtonX+selectBrownButtonWidth && mouseY>selectBrownButtonY && mouseY<selectBrownButtonY+selectBrownButtonHeight ) {
     selectGreyButtonON=false;
     selectBlackButtonON=false;
     selectBrownButtonON=true;
+    selectRedButtonON=false;
+  }
+  //
+  if ( mouseX>selectRedButtonX && mouseX<selectRedButtonX+selectRedButtonWidth && mouseY>selectRedButtonY && mouseY<selectRedButtonY+selectRedButtonHeight ) {
+    selectGreyButtonON=false;
+    selectBlackButtonON=false;
+    selectBrownButtonON=false;
+    selectRedButtonON=true;
   }
   //
 }//End mousePressed
