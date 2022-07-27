@@ -102,6 +102,7 @@ void draw()
     selectYellowButton();
     selectGreenButton();
     selectTurquoiseButton();
+    selectCyanButton();
   }
   //
   if ( selectGreyButtonON==true && draw == true && mouseX>drawingSurfaceX && mouseX<drawingSurfaceX+drawingSurfaceWidth && mouseY>drawingSurfaceY && mouseY<drawingSurfaceY+drawingSurfaceHeight) {
@@ -300,6 +301,20 @@ void mousePressed()
     selectOrangeButtonON=false;
   }
   //
+  if ( mouseX>selectCyanButtonX && mouseX<selectCyanButtonX+selectCyanButtonWidth && mouseY>selectCyanButtonY && mouseY<selectCyanButtonY+selectCyanButtonHeight ) {
+    selectGreyButtonON=false;
+    selectBlackButtonON=false;
+    selectBrownButtonON=false;
+    selectRedButtonON=false;
+    selectYellowButtonON=false;
+    selectGreenButtonON=false;
+    selectTurquoiseButtonON=false;
+    selectCyanButtonON=true;
+    selectBlueButtonON=false;
+    selectPurpleButtonON=false;
+    selectPinkButtonON=false;
+    selectOrangeButtonON=false;
+  }
   //
   //
 }//End mousePressed

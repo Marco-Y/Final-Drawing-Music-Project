@@ -24,6 +24,8 @@ float selectGreenButtonX, selectGreenButtonY, selectGreenButtonWidth, selectGree
 float selectGreenEllipseX, selectGreenEllipseY, selectGreenEllipseDiameter;
 float selectTurquoiseButtonX, selectTurquoiseButtonY, selectTurquoiseButtonWidth, selectTurquoiseButtonHeight;
 float selectTurquoiseEllipseX, selectTurquoiseEllipseY, selectTurquoiseEllipseDiameter;
+float selectCyanButtonX, selectCyanButtonY, selectCyanButtonWidth, selectCyanButtonHeight;
+float selectCyanEllipseX, selectCyanEllipseY, selectCyanEllipseDiameter;
 //
 //Select Pen/Circle Stamp/Eraser buttons
 //
@@ -226,22 +228,23 @@ void selectTurquoiseButton() {
 }
 //
 void selectCyanButton() {
-  selectCyanButtonX = selectColorButtonWidth;
-  selectCyanButtonY = selectColorButtonY+selectColorButtonHeight*1/2;
-  selectCyanButtonWidth = selectColorButtonWidth*1/2;
-  selectCyanButtonHeight = selectColorButtonHeight*1/2;
-  selectCyanEllipseX = selectColorButtonWidth+selectColorButtonWidth*1/4;
-  selectCyanEllipseY = selectColorButtonY+selectColorButtonHeight*3/4;
-  selectCyanEllipseDiameter = selectColorButtonWidth*1/4;
+  selectCyanButtonX = selectBlackButtonX;
+  selectCyanButtonY = selectTurquoiseButtonY;
+  selectCyanButtonWidth = selectTurquoiseButtonWidth;
+  selectCyanButtonHeight = selectTurquoiseButtonHeight;
+  selectCyanEllipseX = selectColorButtonWidth+selectTurquoiseButtonWidth*3/2;
+  selectCyanEllipseY = selectTurquoiseEllipseY;
+  selectCyanEllipseDiameter = selectTurquoiseEllipseDiameter;
   //
   stroke(black);
   fill(resetWhite);
-  rect(selectTurquoiseButtonX, selectTurquoiseButtonY, selectTurquoiseButtonWidth, selectTurquoiseButtonHeight);
-  fill(turquoise);
-  ellipse(selectTurquoiseEllipseX, selectTurquoiseEllipseY, selectTurquoiseEllipseDiameter, selectTurquoiseEllipseDiameter);
+  rect(selectCyanButtonX, selectCyanButtonY, selectCyanButtonWidth, selectCyanButtonHeight);
+  fill(cyan);
+  ellipse(selectCyanEllipseX, selectCyanEllipseY, selectCyanEllipseDiameter, selectCyanEllipseDiameter);
   fill(resetWhite);
 }
 //
+void selectBlueButton
 //
 //
 //
