@@ -132,6 +132,26 @@ void draw()
     stroke(turquoise);
     fill(turquoise);
   }
+  if ( selectCyanButtonON==true && draw == true && mouseX>drawingSurfaceX && mouseX<drawingSurfaceX+drawingSurfaceWidth && mouseY>drawingSurfaceY && mouseY<drawingSurfaceY+drawingSurfaceHeight) {
+    stroke(cyan);
+    fill(cyan);
+  }
+  if ( selectBlueButtonON==true && draw == true && mouseX>drawingSurfaceX && mouseX<drawingSurfaceX+drawingSurfaceWidth && mouseY>drawingSurfaceY && mouseY<drawingSurfaceY+drawingSurfaceHeight) {
+    stroke(blue);
+    fill(blue);
+  }
+  if ( selectPurpleButtonON==true && draw == true && mouseX>drawingSurfaceX && mouseX<drawingSurfaceX+drawingSurfaceWidth && mouseY>drawingSurfaceY && mouseY<drawingSurfaceY+drawingSurfaceHeight) {
+    stroke(purple);
+    fill(purple);
+  }
+  if ( selectPinkButtonON==true && draw == true && mouseX>drawingSurfaceX && mouseX<drawingSurfaceX+drawingSurfaceWidth && mouseY>drawingSurfaceY && mouseY<drawingSurfaceY+drawingSurfaceHeight) {
+    stroke(pink);
+    fill(pink);
+  }
+  if ( selectOrangeButtonON==true && draw == true && mouseX>drawingSurfaceX && mouseX<drawingSurfaceX+drawingSurfaceWidth && mouseY>drawingSurfaceY && mouseY<drawingSurfaceY+drawingSurfaceHeight) {
+    stroke(orange);
+    fill(orange);
+  }
 }//End draw
 //
 void keyPressed() {
