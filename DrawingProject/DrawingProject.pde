@@ -7,9 +7,7 @@ import ddf.minim.ugens.*;
 
 //Global Variables
 Minim minim;
-AudioPlayer boingSoundEffect;
-AudioMetaData boingSoundEffectMetaData;
-AudioPlayer circleStampSoundEffect;
+AudioPlayer soundEffect1, soundEffect2, soundEffect3, soundEffect4, soundEffect5;
 Boolean draw=false;
 Boolean selectButtonON=false, selectPenButtonON=false, selectCircleButtonON=false, selectEraserButtonON=false;
 Boolean selectColorButtonON=false;
@@ -24,15 +22,18 @@ void setup()
   //Display and CANVAS Checker
   size(1200, 750); //Landscape (Portrait or Square)
   minim = new Minim(this);
-  boingSoundEffect = minim.loadFile("Cartoon Boing.mp3");
-  circleStampSoundEffect = minim.loadFile("Wooden Bat Tapping Home Plate.mp3");
-  boingSoundEffectMetaData = boingSoundEffect.getMetaData();
+  soundEffect1 = minim.loadFile("Cartoon Boing.mp3"); //used as error sound
+  soundEffect2 = minim.loadFile("Wooden Bat Tapping Home Plate.mp3"); //Circle Stamping Sound
+  soundEffect3 = minim.loadFile("Dry Off with Towel.mp3"); //Eraser Sound
+  soundEffect4 = minim.loadFile("Pen Clicking .mp3"); //Pen Select Sound
+  soundEffect5 = minim.loadFile("Swoosh.mp3"); //Color Select Sound
+  //
   println ("width:", width, "\t height:", height, "\t displayWidth:", displayWidth, "\t\t displayHeight:", displayHeight);
   int appWidth = width;
   int appHeight = height;
   if ( width > displayWidth || height > displayHeight ) {
     //CANVAS is too Big
-    boingSoundEffect.play();
+    soundEffect1.play();
     appWidth = displayWidth;
     appHeight = displayHeight;
     println("CANVAS needs to be readjusted to your monitor");
@@ -46,7 +47,7 @@ void setup()
   if ( orientation==ls ) { //Test for chosen display orientation
     println("Display Orientation is good to go");
   } else {
-    boingSoundEffect.play();
+    soundEffect1.play();
     appWidth *= 0; //assignment operator , works like appWidth = appWidth*0
     appHeight *= 0;
     println(instruct);
@@ -187,18 +188,21 @@ void mousePressed()
   if ( mouseX>selectButtonX && mouseX<selectButtonX+selectButtonWidth && mouseY>selectButtonY && mouseY<selectButtonY+selectButtonHeight ) selectButtonON = true;
   //
   if ( mouseX>selectPenButtonX && mouseX<selectPenButtonX+selectPenButtonWidth && mouseY>selectPenButtonY && mouseY<selectPenButtonY+selectPenButtonHeight ) {
+    soundEffect4.play();
     selectPenButtonON = true;
     selectCircleButtonON = false;
     selectEraserButtonON = false;
   } //End selectPenButtonON
   //
   if ( mouseX>selectCircleButtonX && mouseX<selectCircleButtonX+selectCircleButtonWidth && mouseY>selectCircleButtonY && mouseY<selectCircleButtonY+selectCircleButtonHeight ) {
+    soundEffect2.play();
     selectPenButtonON = false;
     selectCircleButtonON = true;
     selectEraserButtonON = false;
   } //End selectCircleButtonON
   //
   if ( mouseX>selectEraserButtonX && mouseX<selectEraserButtonX+selectEraserButtonWidth && mouseY>selectEraserButtonY && mouseY<selectEraserButtonY+selectEraserButtonHeight ) {
+    soundEffect3.play();
     selectPenButtonON = false;
     selectCircleButtonON = false;
     selectEraserButtonON = true;
