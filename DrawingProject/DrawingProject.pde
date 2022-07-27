@@ -241,14 +241,13 @@ void draw()
     sSizeON=false;
     mSizeON=false;
     lSizeON=false;
-    xlSizeON=false;
   }
-  /*if ( selectPenButtonON=true && xsSizeON==true && draw == true && mouseX>drawingSurfaceX && mouseX<drawingSurfaceX+drawingSurfaceWidth && mouseY>drawingSurfaceY && mouseY<drawingSurfaceY+drawingSurfaceHeight ) {
-    strokeWeight(sizeXSButtonDiameter);
+  if ( selectPenButtonON==true && xsSizeON==true && draw == true && mouseX>drawingSurfaceX && mouseX<drawingSurfaceX+drawingSurfaceWidth && mouseY>drawingSurfaceY && mouseY<drawingSurfaceY+drawingSurfaceHeight ) {
+    strokeWeight(1);
     line (mouseX, mouseY, pmouseX, pmouseY);
   }
-  */
-  if ( selectCircleButtonON=true && xsSizeON==true && draw == true && mouseX>drawingSurfaceX && mouseX<drawingSurfaceX+drawingSurfaceWidth && mouseY>drawingSurfaceY && mouseY<drawingSurfaceY+drawingSurfaceHeight ) {
+  //
+  if ( selectCircleButtonON==true && xsSizeON==true && draw == true && mouseX>drawingSurfaceX && mouseX<drawingSurfaceX+drawingSurfaceWidth && mouseY>drawingSurfaceY && mouseY<drawingSurfaceY+drawingSurfaceHeight ) {
     strokeWeight(sizeXSButtonDiameter);
     ellipse( mouseX, mouseY, drawingDiameter, drawingDiameter);
   }
