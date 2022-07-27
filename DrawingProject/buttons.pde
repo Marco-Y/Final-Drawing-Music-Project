@@ -52,10 +52,6 @@ float templateButtonX, templateButtonY, templateButtonWidth, templateButtonHeigh
 float resetButtonX, resetButtonY, resetButtonWidth, resetButtonHeight;
 float quitButtonX, quitButtonY, quitButtonWidth, quitButtonHeight;
 //
-//Music Buttons
-//
-float 
-//
 void selectButton() {
   selectButtonX = width*0;
   selectButtonY = height*0;

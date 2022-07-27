@@ -9,8 +9,8 @@ import ddf.minim.ugens.*;
 Minim minim;
 AudioPlayer soundEffect1, soundEffect2, soundEffect3, soundEffect4, soundEffect5, soundEffect6, soundEffect7, soundEffect8, soundEffect9;
 AudioPlayer soundEffect10, soundEffect11, soundEffect12, soundEffect13, soundEffect14, soundEffect15, soundEffect16, soundEffect17, soundEffect18, soundEffect19, soundEffect20, soundEffect21, soundEffect22;
-AudioPlayer song1;
-AudioMetaData songMetaData1;
+AudioPlayer song1, song2, song3;
+AudioMetaData songMetaData1, songMetaData2;
 //
 Boolean draw=false;
 Boolean selectButtonON=false, selectPenButtonON=false, selectCircleButtonON=false, selectEraserButtonON=false;
@@ -75,6 +75,8 @@ void setup()
   //
   song1 = minim.loadFile("Illusions - Anno Domini Beats.mp3");
   songMetaData1 = song1.getMetaData();
+  song2 = minim.loadFile("Xylophone Tip Toe Scale Up copy.mp3");
+  songMetaData2 = song2.getMetaData();
   //Song 1 Meta Data
   println( "File Name: ", songMetaData1.fileName() );
   println( "Song Length (in milliseconds): ", songMetaData1.length() );
@@ -94,6 +96,25 @@ void setup()
   println( "Track: ", songMetaData1.track() );
   println( "Genre: ", songMetaData1.genre() );
   println( "Encoded: ", songMetaData1.encoded() );
+    //Song 2 Meta Data
+  println( "File Name: ", songMetaData2.fileName() );
+  println( "Song Length (in milliseconds): ", songMetaData2.length() );
+  println( "Song Length (in seconds): ", songMetaData2.length()/1000 );
+  println( "Song Length (in minutes & seconds): ", (songMetaData2.length()/1000)/60, " minute", (songMetaData2.length()/1000)-((songMetaData2.length()/1000)/60 * 60), " seconds" );
+  println( "Song Title: ", songMetaData2.title() );
+  println( "Author: ", songMetaData2.author() ); //Song Writer or Performer
+  println( "Composer: ", songMetaData2.composer() ); //Song Writer
+  println( "Orchestra: ", songMetaData2.orchestra() );
+  println( "Album: ", songMetaData2.album() );
+  println( "Disk: ", songMetaData2.disc() );
+  println( "Publisher: ", songMetaData2.publisher() );
+  println( "Date Release: ", songMetaData2.date() );
+  println( "Copyright: ", songMetaData2.copyright() );
+  println( "Comment: ", songMetaData2.comment() );
+  println( "Lyrics: ", songMetaData2.lyrics() );
+  println( "Track: ", songMetaData2.track() );
+  println( "Genre: ", songMetaData2.genre() );
+  println( "Encoded: ", songMetaData2.encoded() );
   //
   populationVariables();
   //
@@ -242,7 +263,17 @@ void draw()
 void keyPressed() {
   if ( keyCode==RIGHT || key=='f' ) song1.skip(5000); // skip forward 1 second (1000 milliseconds)
   if ( keyCode==LEFT || key=='r' ) song1.skip(-5000); // skip backwards 1 second (1000 milliseconds)
-  if (key=='m' || key=='M') {//Mute Button
+  if ( key=='p' || key=='P' ) {//PLAY/PAUSE
+    if ( song1.isPlaying() ) {
+      song1.pause();
+    } else if (song1.position() >= song1.length() - song1.length()*1/1000) {
+      song1.rewind();
+      song1.play();
+    } else {
+      song1.play();
+    }
+  }
+  if (key=='m' || key=='M') {
     if (song1.isMuted()) {
       song1.unmute();
     } else {
