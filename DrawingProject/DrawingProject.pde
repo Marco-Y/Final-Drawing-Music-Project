@@ -9,7 +9,7 @@ import ddf.minim.ugens.*;
 Boolean draw=false;
 Boolean selectButtonON=false, selectPenButtonON=false, selectCircleButtonON=false, selectEraserButtonON=false;
 Boolean selectColorButtonON=false;
-Boolean selectGreyButtonON=false, selectBlackButtonON=false, selectBrownButtonON=false, selectRedButtonON=false;
+Boolean selectGreyButtonON=false, selectBlackButtonON=false, selectBrownButtonON=false, selectRedButtonON=false, selectYellowButtonON=false;
 int XS=1, S=4, M=7, L=10, XL=13, XXL=17;
 //
 void setup()
@@ -98,13 +98,13 @@ void draw()
     selectBlackButton();
     selectBrownButton();
     selectRedButton();
+    selectYellowButton();
   }
   //
   if ( selectGreyButtonON==true && draw == true && mouseX>drawingSurfaceX && mouseX<drawingSurfaceX+drawingSurfaceWidth && mouseY>drawingSurfaceY && mouseY<drawingSurfaceY+drawingSurfaceHeight) {
     stroke(defaultGrey);
     fill(defaultGrey);
   }
-  //
   if ( selectBlackButtonON==true && draw == true && mouseX>drawingSurfaceX && mouseX<drawingSurfaceX+drawingSurfaceWidth && mouseY>drawingSurfaceY && mouseY<drawingSurfaceY+drawingSurfaceHeight) {
     stroke(black);
     fill(black);
@@ -116,6 +116,10 @@ void draw()
   if ( selectRedButtonON==true && draw == true && mouseX>drawingSurfaceX && mouseX<drawingSurfaceX+drawingSurfaceWidth && mouseY>drawingSurfaceY && mouseY<drawingSurfaceY+drawingSurfaceHeight) {
     stroke(red);
     fill(red);
+  }
+  if ( selectYellowButtonON==true && draw == true && mouseX>drawingSurfaceX && mouseX<drawingSurfaceX+drawingSurfaceWidth && mouseY>drawingSurfaceY && mouseY<drawingSurfaceY+drawingSurfaceHeight) {
+    stroke(yellow);
+    fill(yellow);
   }
 }//End draw
 //
@@ -165,6 +169,7 @@ void mousePressed()
     selectBlackButtonON=false;
     selectBrownButtonON=false;
     selectRedButtonON=false;
+    selectYellowButtonON=false;
   }
   //
   if ( mouseX>selectBlackButtonX && mouseX<selectBlackButtonX+selectBlackButtonWidth && mouseY>selectBlackButtonY && mouseY<selectBlackButtonY+selectBlackButtonHeight ) {
@@ -172,6 +177,7 @@ void mousePressed()
     selectBlackButtonON=true;
     selectBrownButtonON=false;
     selectRedButtonON=false;
+    selectYellowButtonON=false;
   }
   //
   if ( mouseX>selectBrownButtonX && mouseX<selectBrownButtonX+selectBrownButtonWidth && mouseY>selectBrownButtonY && mouseY<selectBrownButtonY+selectBrownButtonHeight ) {
@@ -179,6 +185,7 @@ void mousePressed()
     selectBlackButtonON=false;
     selectBrownButtonON=true;
     selectRedButtonON=false;
+    selectYellowButtonON=false;
   }
   //
   if ( mouseX>selectRedButtonX && mouseX<selectRedButtonX+selectRedButtonWidth && mouseY>selectRedButtonY && mouseY<selectRedButtonY+selectRedButtonHeight ) {
@@ -186,7 +193,18 @@ void mousePressed()
     selectBlackButtonON=false;
     selectBrownButtonON=false;
     selectRedButtonON=true;
+    selectYellowButtonON=false;
   }
+  //
+  if ( mouseX>selectYellowButtonX && mouseX<selectYellowButtonX+selectYellowButtonWidth && mouseY>selectYellowButtonY && mouseY<selectYellowButtonY+selectYellowButtonHeight ) {
+    selectGreyButtonON=false;
+    selectBlackButtonON=false;
+    selectBrownButtonON=false;
+    selectRedButtonON=false;
+    selectYellowButtonON=true;
+  }
+  //
+  //
   //
 }//End mousePressed
 //
