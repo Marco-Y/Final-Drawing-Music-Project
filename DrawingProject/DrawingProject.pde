@@ -97,7 +97,7 @@ void setup()
   println( "Genre: ", songMetaData1.genre() );
   println( "Encoded: ", songMetaData1.encoded() );
   //Song 2 Meta Data
-  println( "File Name: ", songMetaData2.fileName() );
+  println( "\n\n\n File Name: ", songMetaData2.fileName() );
   println( "Song Length (in milliseconds): ", songMetaData2.length() );
   println( "Song Length (in seconds): ", songMetaData2.length()/1000 );
   println( "Song Length (in minutes & seconds): ", (songMetaData2.length()/1000)/60, " minute", (songMetaData2.length()/1000)-((songMetaData2.length()/1000)/60 * 60), " seconds" );
@@ -130,6 +130,7 @@ void setup()
 void draw()
 {
   selectDrawButtons();
+  image1();
   //
   //Select
   //
