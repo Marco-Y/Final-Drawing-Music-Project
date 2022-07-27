@@ -13,7 +13,7 @@ Boolean selectButtonON=false, selectPenButtonON=false, selectCircleButtonON=fals
 Boolean selectColorButtonON=false;
 Boolean selectGreyButtonON=false, selectBlackButtonON=false, selectBrownButtonON=false, selectRedButtonON=false, selectYellowButtonON=false, selectGreenButtonON=false;
 Boolean selectTurquoiseButtonON=false, selectCyanButtonON=false, selectBlueButtonON=false, selectPurpleButtonON=false, selectPinkButtonON=false, selectOrangeButtonON=false;
-int XS=1, S=4, M=7, L=10, XL=13, XXL=17;
+int XS=1, S=4, M=7, L=10, XL=13;
 //
 void setup()
 {
@@ -118,6 +118,12 @@ void draw()
     selectPurpleButton();
     selectPinkButton();
     selectOrangeButton();
+  }
+  //
+  if (mousePressed==true) {
+    if ( mouseX>selectGreyButtonX && mouseX<selectGreyButtonX+selectGreyButtonWidth*6 && mouseY>selectGreyButtonY && mouseY<selectGreyButtonY+selectGreyButtonHeight*2) {
+      soundEffect5.play();
+    }
   }
   //
   if ( selectGreyButtonON==true && draw == true && mouseX>drawingSurfaceX && mouseX<drawingSurfaceX+drawingSurfaceWidth && mouseY>drawingSurfaceY && mouseY<drawingSurfaceY+drawingSurfaceHeight) {
