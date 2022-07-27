@@ -9,7 +9,8 @@ import ddf.minim.ugens.*;
 Boolean draw=false;
 Boolean selectButtonON=false, selectPenButtonON=false, selectCircleButtonON=false, selectEraserButtonON=false;
 Boolean selectColorButtonON=false;
-Boolean selectGreyButtonON=false, selectBlackButtonON=false, selectBrownButtonON=false, selectRedButtonON=false, selectYellowButtonON=false;
+Boolean selectGreyButtonON=false, selectBlackButtonON=false, selectBrownButtonON=false, selectRedButtonON=false, selectYellowButtonON=false, selectGreenButtonON=false;
+Boolean selectTurquoiseButtonON=false, selectCyanButtonON=false, selectBlueButtonON=false, selectPurpleButtonON=false, selectPinkButtonON=false, selectOrangeButtonON=false;
 int XS=1, S=4, M=7, L=10, XL=13, XXL=17;
 //
 void setup()
@@ -99,6 +100,8 @@ void draw()
     selectBrownButton();
     selectRedButton();
     selectYellowButton();
+    selectGreenButton();
+    selectTurquoiseButton();
   }
   //
   if ( selectGreyButtonON==true && draw == true && mouseX>drawingSurfaceX && mouseX<drawingSurfaceX+drawingSurfaceWidth && mouseY>drawingSurfaceY && mouseY<drawingSurfaceY+drawingSurfaceHeight) {
@@ -120,6 +123,14 @@ void draw()
   if ( selectYellowButtonON==true && draw == true && mouseX>drawingSurfaceX && mouseX<drawingSurfaceX+drawingSurfaceWidth && mouseY>drawingSurfaceY && mouseY<drawingSurfaceY+drawingSurfaceHeight) {
     stroke(yellow);
     fill(yellow);
+  }
+  if ( selectGreenButtonON==true && draw == true && mouseX>drawingSurfaceX && mouseX<drawingSurfaceX+drawingSurfaceWidth && mouseY>drawingSurfaceY && mouseY<drawingSurfaceY+drawingSurfaceHeight) {
+    stroke(green);
+    fill(green);
+  }
+  if ( selectTurquoiseButtonON==true && draw == true && mouseX>drawingSurfaceX && mouseX<drawingSurfaceX+drawingSurfaceWidth && mouseY>drawingSurfaceY && mouseY<drawingSurfaceY+drawingSurfaceHeight) {
+    stroke(turquoise);
+    fill(turquoise);
   }
 }//End draw
 //
@@ -170,6 +181,13 @@ void mousePressed()
     selectBrownButtonON=false;
     selectRedButtonON=false;
     selectYellowButtonON=false;
+    selectGreenButtonON=false;
+    selectTurquoiseButtonON=false;
+    selectCyanButtonON=false;
+    selectBlueButtonON=false;
+    selectPurpleButtonON=false;
+    selectPinkButtonON=false;
+    selectOrangeButtonON=false;
   }
   //
   if ( mouseX>selectBlackButtonX && mouseX<selectBlackButtonX+selectBlackButtonWidth && mouseY>selectBlackButtonY && mouseY<selectBlackButtonY+selectBlackButtonHeight ) {
@@ -178,6 +196,13 @@ void mousePressed()
     selectBrownButtonON=false;
     selectRedButtonON=false;
     selectYellowButtonON=false;
+    selectGreenButtonON=false;
+    selectTurquoiseButtonON=false;
+    selectCyanButtonON=false;
+    selectBlueButtonON=false;
+    selectPurpleButtonON=false;
+    selectPinkButtonON=false;
+    selectOrangeButtonON=false;
   }
   //
   if ( mouseX>selectBrownButtonX && mouseX<selectBrownButtonX+selectBrownButtonWidth && mouseY>selectBrownButtonY && mouseY<selectBrownButtonY+selectBrownButtonHeight ) {
@@ -186,6 +211,13 @@ void mousePressed()
     selectBrownButtonON=true;
     selectRedButtonON=false;
     selectYellowButtonON=false;
+    selectGreenButtonON=false;
+    selectTurquoiseButtonON=false;
+    selectCyanButtonON=false;
+    selectBlueButtonON=false;
+    selectPurpleButtonON=false;
+    selectPinkButtonON=false;
+    selectOrangeButtonON=false;
   }
   //
   if ( mouseX>selectRedButtonX && mouseX<selectRedButtonX+selectRedButtonWidth && mouseY>selectRedButtonY && mouseY<selectRedButtonY+selectRedButtonHeight ) {
@@ -194,6 +226,13 @@ void mousePressed()
     selectBrownButtonON=false;
     selectRedButtonON=true;
     selectYellowButtonON=false;
+    selectGreenButtonON=false;
+    selectTurquoiseButtonON=false;
+    selectCyanButtonON=false;
+    selectBlueButtonON=false;
+    selectPurpleButtonON=false;
+    selectPinkButtonON=false;
+    selectOrangeButtonON=false;
   }
   //
   if ( mouseX>selectYellowButtonX && mouseX<selectYellowButtonX+selectYellowButtonWidth && mouseY>selectYellowButtonY && mouseY<selectYellowButtonY+selectYellowButtonHeight ) {
@@ -202,8 +241,44 @@ void mousePressed()
     selectBrownButtonON=false;
     selectRedButtonON=false;
     selectYellowButtonON=true;
+    selectGreenButtonON=false;
+    selectTurquoiseButtonON=false;
+    selectCyanButtonON=false;
+    selectBlueButtonON=false;
+    selectPurpleButtonON=false;
+    selectPinkButtonON=false;
+    selectOrangeButtonON=false;
   }
   //
+  if ( mouseX>selectGreenButtonX && mouseX<selectGreenButtonX+selectGreenButtonWidth && mouseY>selectGreenButtonY && mouseY<selectGreenButtonY+selectGreenButtonHeight ) {
+    selectGreyButtonON=false;
+    selectBlackButtonON=false;
+    selectBrownButtonON=false;
+    selectRedButtonON=false;
+    selectYellowButtonON=false;
+    selectGreenButtonON=true;
+    selectTurquoiseButtonON=false;
+    selectCyanButtonON=false;
+    selectBlueButtonON=false;
+    selectPurpleButtonON=false;
+    selectPinkButtonON=false;
+    selectOrangeButtonON=false;
+  }
+  //
+  if ( mouseX>selectTurquoiseButtonX && mouseX<selectTurquoiseButtonX+selectTurquoiseButtonWidth && mouseY>selectTurquoiseButtonY && mouseY<selectTurquoiseButtonY+selectTurquoiseButtonHeight ) {
+    selectGreyButtonON=false;
+    selectBlackButtonON=false;
+    selectBrownButtonON=false;
+    selectRedButtonON=false;
+    selectYellowButtonON=false;
+    selectGreenButtonON=false;
+    selectTurquoiseButtonON=true;
+    selectCyanButtonON=false;
+    selectBlueButtonON=false;
+    selectPurpleButtonON=false;
+    selectPinkButtonON=false;
+    selectOrangeButtonON=false;
+  }
   //
   //
 }//End mousePressed
