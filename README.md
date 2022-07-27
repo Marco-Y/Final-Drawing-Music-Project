@@ -12,4 +12,6 @@ To Do List
 - [x] Reset, quitButton
 - [ ] Background IMG (optional)
 - [ ] Templates
+- [x] Sound Effects
+- [ ] Songs
 - [ ] <del>Effects (e.g. blur, brightness adjustment etc.)</del>
