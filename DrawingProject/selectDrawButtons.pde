@@ -60,4 +60,5 @@ void selectDrawButtons() {
   strokeWeight(1);
   ppButton();
   image1();
+  image2();
 }

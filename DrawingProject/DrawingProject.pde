@@ -132,7 +132,6 @@ void setup()
 void draw()
 {
   selectDrawButtons();
-  image1();
   //
   //Select
   //
@@ -610,6 +609,13 @@ void mousePressed()
       song3.play();
     } else {
       song2.play();
+    }
+    if ( song3.isPlaying() ) {
+      song3.pause();
+    } else if (song3.position() >= song3.length() - song3.length()*1/1000) {
+      song1.play();
+    } else {
+      song3.play();
     }
   }
 }//End mousePressed
