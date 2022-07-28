@@ -326,20 +326,20 @@ void draw()
 void keyPressed() {
   if ( key=='f' || key=='F' ) {
     if (song1.isPlaying()){
-      song1.skip(5000); // skip forward 1 second (1000 milliseconds)
+      song1.skip(5000); // skip forward 5 second (5000 milliseconds)
     } else if (song2.isPlaying()){
-      song2.skip(5000); // skip forward 1 second (1000 milliseconds)
+      song2.skip(5000); // skip forward 5 second (5000 milliseconds)
     } else if (song3.isPlaying()){
-      song3.skip(5000); // skip forward 1 second (1000 milliseconds)
+      song3.skip(5000); // skip forward 5 second (5000 milliseconds)
     }
   }
   if ( key=='r' || key=='R' ) {
     if (song1.isPlaying()){
-      song1.skip(-5000); // skip backwards 1 second (1000 milliseconds)
+      song1.skip(-5000); // skip backwards 5 second (5000 milliseconds)
     } else if (song2.isPlaying()){
-      song2.skip(-5000); // skip backwards 1 second (1000 milliseconds)
+      song2.skip(-5000); // skip backwards 5 second (5000 milliseconds)
     } else if (song3.isPlaying()){
-      song3.skip(-5000); // skip backwards 1 second (1000 milliseconds)
+      song3.skip(-5000); // skip backwards 5 second (5000 milliseconds)
     }
 
   }
