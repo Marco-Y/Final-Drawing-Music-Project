@@ -59,12 +59,11 @@ void selectDrawButtons() {
   textSize(20);
   strokeWeight(1);
   ppButton();
-  image1();
-  image2();
+  /*image2();
   image3();
   image4();
   image5();
   image6();
   image7();
-  image8();
+  image8();*/
 }

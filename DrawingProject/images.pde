@@ -1,5 +1,5 @@
-PImage pic1, pic2, pic3, pic4, pic5, pic6, pic7, pic8;
-float picX1, picY1, picWidth1, picHeight1; //Song1  Image
+PImage pic1, pic2, pic3, pic4, pic5, pic6, pic7, pic8, pic9, pic10;
+float picX1, picY1, picWidth1, picHeight1; //Song1, 3 Image
 float picX2, picY2, picWidth2, picHeight2; //Reverse png
 float picX3, picY3, picWidth3, picHeight3; //FastForward png
 float picX4, picY4, picWidth4, picHeight4; //PrevSong png
@@ -7,6 +7,8 @@ float picX5, picY5, picWidth5, picHeight5; //NextSong png
 float picX6, picY6, picWidth6, picHeight6; //Loop png
 float picX7, picY7, picWidth7, picHeight7; //NoSound png
 float picX8, picY8, picWidth8, picHeight8; //SoundOn png
+float picX9, picY9, picWidth9, picHeight9; //Song 2 Image
+float picX10, picY10, picWidth10, picHeight10;
 //
 void image1() {
   pic1 = loadImage("annodominibeats.jpeg");
@@ -86,4 +88,25 @@ void image8() {
   picHeight8 = ppButtonHeight*1/2;
   //
   image(pic8, picX8, picY8, picWidth8, picHeight8);
+}
+//
+//
+void image9() {
+  pic9 = loadImage("yticon.png");
+  picX9 = selectingSurfaceWidth*2/5;
+  picY9 = selectButtonHeight*5;
+  picWidth9 = selectingSurfaceWidth*1/5;
+  picHeight9 = picWidth1;
+  //
+  image(pic9, picX9, picY9, picWidth9, picHeight9);
+}
+//
+void image10() {
+  pic10 = loadImage("pause12.jpeg");
+  picX10 = selectingSurfaceWidth*2/5;
+  picY10 = selectButtonHeight*5;
+  picWidth10 = selectingSurfaceWidth*1/5;
+  picHeight10 = picWidth1;
+  //
+  image(pic10, picX10, picY10, picWidth10, picHeight10);
 }
