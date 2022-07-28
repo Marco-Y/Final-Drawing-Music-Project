@@ -10,7 +10,7 @@ Minim minim;
 AudioPlayer soundEffect1, soundEffect2, soundEffect3, soundEffect4, soundEffect5, soundEffect6, soundEffect7, soundEffect8, soundEffect9;
 AudioPlayer soundEffect10, soundEffect11, soundEffect12, soundEffect13, soundEffect14, soundEffect15, soundEffect16, soundEffect17, soundEffect18, soundEffect19, soundEffect20, soundEffect21, soundEffect22;
 AudioPlayer song1, song2, song3;
-AudioMetaData songMetaData1, songMetaData2;
+AudioMetaData songMetaData1, songMetaData2, songMetaData3;
 //
 Boolean draw=false;
 Boolean selectButtonON=false, selectPenButtonON=false, selectCircleButtonON=false, selectEraserButtonON=false;
@@ -77,6 +77,8 @@ void setup()
   songMetaData1 = song1.getMetaData();
   song2 = minim.loadFile("Xylophone Tip Toe Scale Up copy.mp3");
   songMetaData2 = song2.getMetaData();
+  song3 = minim.loadFile("Pray - Anno Domini Beats.mp3");
+  songMetaData3 = song3.getMetaData();
   //Song 1 Meta Data
   println( "File Name: ", songMetaData1.fileName() );
   println( "Song Length (in milliseconds): ", songMetaData1.length() );
@@ -594,6 +596,22 @@ void mousePressed()
     exit();
   }
   //
+  if ( mouseX> ppButtonX && mouseX< ppButtonX+ppButtonWidth && mouseY> ppButtonY && mouseY< ppButtonY+ppButtonHeight ) {//PLAY/PAUSE
+    if ( song1.isPlaying() ) {
+      song1.pause();
+    } else if (song1.position() >= song1.length() - song1.length()*1/1000) {
+      song2.play();
+    } else {
+      song1.play();
+    }
+    if ( song2.isPlaying() ) {
+      song2.pause();
+    } else if (song2.position() >= song2.length() - song2.length()*1/1000) {
+      song3.play();
+    } else {
+      song2.play();
+    }
+  }
 }//End mousePressed
 //
 //End MAIN Program

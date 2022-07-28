@@ -59,4 +59,5 @@ void selectDrawButtons() {
   textSize(20);
   strokeWeight(1);
   ppButton();
+  image1();
 }

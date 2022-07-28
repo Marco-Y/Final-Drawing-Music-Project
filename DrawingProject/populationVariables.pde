@@ -1,6 +1,7 @@
 //Global Variables
 float drawingSurfaceX, drawingSurfaceY, drawingSurfaceWidth, drawingSurfaceHeight, drawingDiameter;
 float selectingSurfaceX, selectingSurfaceY, selectingSurfaceWidth, selectingSurfaceHeight;
+float selectingSurfaceXCenter;
 //
 void populationVariables() {
   //Drawing Surface
@@ -14,5 +15,6 @@ void populationVariables() {
   selectingSurfaceY *= 0;
   selectingSurfaceWidth = width*1/2;
   selectingSurfaceHeight = height;
+  selectingSurfaceXCenter = selectingSurfaceWidth/2;
   //
 }//End populationVariables
