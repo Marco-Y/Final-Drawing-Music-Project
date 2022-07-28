@@ -11,7 +11,7 @@ To Do List
 - [x] Size, strokeWeight
 - [x] Reset, quitButton
 - [ ] Background IMG (optional)
-- [ ] Templates
+- [ ] <del>Templates</del>
 - [x] Sound Effects
-- [ ] Songs
+- [x] Songs
 - [ ] <del>Effects (e.g. blur, brightness adjustment etc.)</del>
