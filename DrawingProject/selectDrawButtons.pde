@@ -26,7 +26,7 @@ void selectDrawButtons() {
   sizeButton();
   sizeText();
   fill(resetWhite);
-  //
+  /*
   if (mouseX> templateButtonX && mouseX< templateButtonX+templateButtonWidth && mouseY> templateButtonY && mouseY< templateButtonY+templateButtonHeight) {
     buttonFill = purple;
   } else {
@@ -36,7 +36,7 @@ void selectDrawButtons() {
   templateButton();
   templateText();
   fill(resetWhite);
-  //
+  */
   if (mouseX> resetButtonX && mouseX< resetButtonX+resetButtonWidth && mouseY> resetButtonY && mouseY< resetButtonY+resetButtonHeight) {
     buttonFill = green;
   } else {
