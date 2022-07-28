@@ -1,11 +1,12 @@
-PImage pic1, pic2, pic3, pic4, pic5, pic6, pic7;
+PImage pic1, pic2, pic3, pic4, pic5, pic6, pic7, pic8;
 float picX1, picY1, picWidth1, picHeight1; //Song1  Image
 float picX2, picY2, picWidth2, picHeight2; //Reverse png
 float picX3, picY3, picWidth3, picHeight3; //FastForward png
 float picX4, picY4, picWidth4, picHeight4; //PrevSong png
 float picX5, picY5, picWidth5, picHeight5; //NextSong png
 float picX6, picY6, picWidth6, picHeight6; //Loop png
-float picX7, picY7, picWidth7, picHeight7; 
+float picX7, picY7, picWidth7, picHeight7; //NoSound png
+float picX8, picY8, picWidth8, picHeight8; //SoundOn png
 //
 void image1() {
   pic1 = loadImage("annodominibeats.jpeg");
@@ -65,4 +66,24 @@ void image6() {
   picHeight6 = ppButtonHeight*1/2;
   //
   image(pic6, picX6, picY6, picWidth6, picHeight6);
+}
+//
+void image7() {
+  pic7 = loadImage("nosound.jpeg");
+  picX7 = selectingSurfaceXCenter-selectingSurfaceWidth*1/8-ppButtonHeight*1/2;
+  picY7 = ppButtonY+ppButtonHeight*1/4;
+  picWidth7 = ppButtonHeight*1/2;
+  picHeight7 = ppButtonHeight*1/2;
+  //
+  image(pic7, picX7, picY7, picWidth7, picHeight7);
+}
+//
+void image8() {
+  pic8 = loadImage("soundon.png");
+  picX8 = selectingSurfaceXCenter-selectingSurfaceWidth*1/8-ppButtonHeight*1/2;
+  picY8 = ppButtonY+ppButtonHeight*1/4;
+  picWidth8 = ppButtonHeight*1/2;
+  picHeight8 = ppButtonHeight*1/2;
+  //
+  image(pic8, picX8, picY8, picWidth8, picHeight8);
 }

@@ -11,13 +11,15 @@ AudioPlayer soundEffect1, soundEffect2, soundEffect3, soundEffect4, soundEffect5
 AudioPlayer soundEffect10, soundEffect11, soundEffect12, soundEffect13, soundEffect14, soundEffect15, soundEffect16, soundEffect17, soundEffect18, soundEffect19, soundEffect20, soundEffect21, soundEffect22;
 AudioPlayer song1, song2, song3;
 AudioMetaData songMetaData1, songMetaData2, songMetaData3;
-//
+//Draw
 Boolean draw=false;
 Boolean selectButtonON=false, selectPenButtonON=false, selectCircleButtonON=false, selectEraserButtonON=false;
 Boolean selectColorButtonON=false;
 Boolean selectGreyButtonON=false, selectBlackButtonON=false, selectBrownButtonON=false, selectRedButtonON=false, selectYellowButtonON=false, selectGreenButtonON=false;
 Boolean selectTurquoiseButtonON=false, selectCyanButtonON=false, selectBlueButtonON=false, selectPurpleButtonON=false, selectPinkButtonON=false, selectOrangeButtonON=false;
 Boolean sizeButtonON=false, sSizeON=false, mSizeON=false, lSizeON=false;
+//Music
+Boolean play=false;
 //
 void setup()
 {
@@ -118,7 +120,27 @@ void setup()
   println( "Genre: ", songMetaData2.genre() );
   println( "Encoded: ", songMetaData2.encoded() );
   //
-  song1.play();
+  //Song 3 Meta Data
+  println( "\n\n\n File Name: ", songMetaData3.fileName() );
+  println( "Song Length (in milliseconds): ", songMetaData3.length() );
+  println( "Song Length (in seconds): ", songMetaData3.length()/1000 );
+  println( "Song Length (in minutes & seconds): ", (songMetaData3.length()/1000)/60, " minute", (songMetaData3.length()/1000)-((songMetaData3.length()/1000)/60 * 60), " seconds" );
+  println( "Song Title: ", songMetaData3.title() );
+  println( "Author: ", songMetaData3.author() ); //Song Writer or Performer
+  println( "Composer: ", songMetaData3.composer() ); //Song Writer
+  println( "Orchestra: ", songMetaData3.orchestra() );
+  println( "Album: ", songMetaData3.album() );
+  println( "Disk: ", songMetaData3.disc() );
+  println( "Publisher: ", songMetaData3.publisher() );
+  println( "Date Release: ", songMetaData3.date() );
+  println( "Copyright: ", songMetaData3.copyright() );
+  println( "Comment: ", songMetaData3.comment() );
+  println( "Lyrics: ", songMetaData3.lyrics() );
+  println( "Track: ", songMetaData3.track() );
+  println( "Genre: ", songMetaData3.genre() );
+  println( "Encoded: ", songMetaData3.encoded() );
+  //
+  //song1.play();
   populationVariables();
   //
   strokeWeight(1);
@@ -260,6 +282,24 @@ void draw()
     stroke(1);
   }
   //
+  if ( song1.isPlaying() ) {
+    fill(black);
+    textAlign(RIGHT,CENTER);
+    text(songMetaData1.fileName(), musicTextX, musicTextY, musicTextWidth, musicTextHeight);
+    image(pic1, picX1, picY1, picWidth1, picHeight1);
+  }
+  if ( song2.isPlaying() ) {
+    fill(black);
+    textAlign(RIGHT,CENTER);
+    text(songMetaData2.title(), musicTextX, musicTextY, musicTextWidth, musicTextHeight);
+    image(pic2, picX2, picY2, picWidth2, picHeight2);
+  }
+  if ( song3.isPlaying() ) {
+    fill(black);
+    textAlign(RIGHT,CENTER);
+    text(songMetaData3.fileName(), musicTextX, musicTextY, musicTextWidth, musicTextHeight);
+    image(pic1, picX1, picY1, picWidth1, picHeight1);
+  }
 }//End draw
 //
 void keyPressed() {
@@ -285,8 +325,30 @@ void keyPressed() {
   if (key=='m' || key=='M') {
     if (song1.isMuted()) {
       song1.unmute();
+      song2.mute();
+      song3.mute();
     } else {
       song1.mute();
+      song2.mute();
+      song3.mute();
+    }
+    if (song2.isMuted()) {
+      song1.mute();
+      song2.unmute();
+      song3.mute();
+    } else {
+      song1.mute();
+      song2.mute();
+      song3.mute();
+    }
+    if (song3.isMuted()) {
+      song1.mute();
+      song2.mute();
+      song3.unmute();
+    } else {
+      song1.mute();
+      song2.mute();
+      song3.mute();
     }
   }
 }//End keyPressed

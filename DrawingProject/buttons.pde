@@ -424,6 +424,7 @@ void ppButton() {
   fill(resetWhite);
   rect(ppButtonX, ppButtonY, ppButtonWidth, ppButtonHeight);
   fill(black);
+  textAlign(CENTER,CENTER);
   text("Play/Pause", ppButtonX, ppButtonY, ppButtonWidth, ppButtonHeight);
   fill(resetWhite);
 }

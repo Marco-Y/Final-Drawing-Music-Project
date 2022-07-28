@@ -6,7 +6,7 @@ String selectColorText = "Color";
 String resetText = "Reset";
 String quitText = "Quit";
 String templateText = "Template";
-String musicText = "Music";
+String musicText = "Currently Playing:";
 float selectTextX, selectTextY, selectTextWidth, selectTextHeight;
 float selectColorTextX, selectColorTextY, selectColorTextWidth, selectColorTextHeight;
 float sizeTextX, sizeTextY, sizeTextWidth, sizeTextHeight;
@@ -96,7 +96,7 @@ void musicText() {
   musicTextHeight = selectButtonHeight/2;
   //
   fill(black);
-  textAlign(CENTER,CENTER);
+  textAlign(LEFT,CENTER);
   textFont(timesNewRomanFont, 30);
   text(musicText, musicTextX, musicTextY, musicTextWidth, musicTextHeight);
 }
